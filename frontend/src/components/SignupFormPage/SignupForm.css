@@ -1,0 +1,29 @@
+.signup-container {
+    display: flex;
+    flex-direction: column;
+    background-color: ivory;
+    margin-left: auto;
+    margin-top: auto;
+    padding: 25px;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+.email-div,
+.username-div,
+.confirm-password-div,
+.password-div {
+    padding: 10px;
+}
+
+.email-input,
+.username-input,
+.confirm-password-input,
+.password-input {
+  padding: 5px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  font-size: large;
+  font-family: "Poppins", sans-serif;
+}
