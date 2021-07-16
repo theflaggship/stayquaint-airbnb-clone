@@ -1,0 +1,1 @@
+// { name: "name", addressId: "#", userId: "#", description: "text", price: "$", categoryId: "#", breakfast: "true/false", pool: "true/false", wifi: "true/false", createdAt: new Date(), updatedAt: new Date() },
