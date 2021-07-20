@@ -6,10 +6,11 @@ const { requireAuth } = require('../../utils/auth.js');
 const { restoreUser } = require('../../utils/auth.js');
 const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
-
-router.use('/session', sessionRouter);
+const lodgingsRouter = require('./lodgings.js');
 
 router.use('/users', usersRouter);
+router.use('/session', sessionRouter);
+router.use('/lodgings', lodgingsRouter);
 
 
 

@@ -34,12 +34,20 @@ router.post(
   validateSignup,
   asyncHandler(async (req, res) => {
     const { email, password, username } = req.body;
-    const user = await User.signup({ email, username, password });  
-    await setTokenCookie(res, user);  
+    const user = await User.signup({ email, username, password });
+    await setTokenCookie(res, user);
     return res.json({
       user,
     });
   }),
 );
+
+//TODO Edit lodging
+// router.put('/:userId/:lodgingId', requireAuth, asyncHandler(async (req, res) => {
+// }));
+
+//TODO Delete lodging
+// router.delete('/:userId/:lodgingId', requireAuth, asyncHandler(async (req, res) => {
+// }));
 
 module.exports = router;
