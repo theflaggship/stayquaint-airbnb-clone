@@ -1,4 +1,4 @@
-//1 { type: "Hotel", createdAt: new Date(), updatedAt: new Date() },
-//2 { type: "Inn", createdAt: new Date(), updatedAt: new Date() },
-//3 { type: "Bed and Breakfast", createdAt: new Date(), updatedAt: new Date() },
-//4 { type: "Cabin", createdAt: new Date(), updatedAt: new Date() },
+// { type: "Hotel", createdAt: new Date(), updatedAt: new Date() },
+// { type: "Inn", createdAt: new Date(), updatedAt: new Date() },
+// { type: "Bed & Breakfast", createdAt: new Date(), updatedAt: new Date() },
+// { type: "Cabin", createdAt: new Date(), updatedAt: new Date() },
