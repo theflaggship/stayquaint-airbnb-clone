@@ -1,4 +1,3 @@
-// { imgUrl: "url", lodgingId: "#", createdAt: new Date(), updatedAt: new Date() },
 // { imgUrl: "https://stayquaint.s3.us-west-1.amazonaws.com/carmelriverinn/53916706.jpeg", lodgingId: "1", createdAt: new Date(), updatedAt: new Date() },
 // { imgUrl: "https://stayquaint.s3.us-west-1.amazonaws.com/carmelriverinn/64442050.jpeg", lodgingId: "1", createdAt: new Date(), updatedAt: new Date() },
 // { imgUrl: "https://stayquaint.s3.us-west-1.amazonaws.com/carmelriverinn/53916777.jpeg", lodgingId: "1", createdAt: new Date(), updatedAt: new Date() },

@@ -13,6 +13,12 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Lodging.associate = function(models) {
     // associations can be defined here
+    Lodging.belongsTo(models.Address, {foreignKey: 'addressId'});
+    Lodging.belongsTo(models.User, {foreignKey: 'userId'});
+    Lodging.belongsTo(models.Category, {foreignKey: 'categoryId'});
+    Lodging.hasMany(models.Review, {foreignKey: 'lodgingId'});
+    Lodging.hasMany(models.Booking, {foreignKey: 'lodgingId'});
+    Lodging.hasMany(models.Image, {foreignKey: 'lodgingId'});
   };
   return Lodging;
 };
