@@ -5,7 +5,7 @@ import lodgings from './lodgings';
 
 const rootReducer = combineReducers({
   session: sessionReducer,
-  lodgings: lodgingsReducer,
+  lodgings,
 });
 
 let enhancer;

@@ -8,7 +8,7 @@ const load = list => ({
   });
 
 export const getLodgings = () => async dispatch => {
-    const response = await fetch(`/api/lodgings`);
+    const response = await csrfFetch(`/api/lodgings`);
 
     if (response.ok) {
       const list = await response.json();
@@ -20,20 +20,16 @@ export const getLodgings = () => async dispatch => {
 
   const initialState = {
     list: [],
-    types: []
   };
 
   const lodgingsReducer = (state = initialState, action) => {
     switch (action.type) {
       case LOAD:
-        const allLodgings = {};
+        const allLodgings = { ...state.list, ...action.list };
         action.list.forEach(lodging => {
             allLodgings[lodging.id] = lodging;
-        });
-        return {
-            ...allLodgings,
-            ...state
-        }
+        })
+        return { ...state, list: allLodgings };
       default:
           return state;
     }
