@@ -32,7 +32,7 @@ function LoginForm() {
           <h2>Log in</h2>
           <input
             className="cred-input"
-            placeHolder="Username or Password"
+            placeHolder="Username or Email"
             type="text"
             value={credential}
             onChange={(e) => setCredential(e.target.value)}

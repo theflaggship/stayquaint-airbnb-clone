@@ -18,6 +18,7 @@ const CATEGORIES = [
 function NewLodgingForm({lodgings}) {
 
   const [name, setName] = useState('');
+  const [imgUrl, setImgUrl] = useState('');
   const [addressLineOne, setAddressLineOne] = useState('')
   const [addressLineTwo, setAddressLineTwo] = useState('')
   const [city, setCity] = useState('')
@@ -35,14 +36,15 @@ function NewLodgingForm({lodgings}) {
 
   useEffect(() => {
     const errors = []
-    if (name.length === 0) errors.push("Name field is required")
-    if (name.length > 30) errors.push("Name field must be 30 characters or less")
-    if (addressLineOne.length === 0) errors.push("Address Line 1 field must be filled out")
-    if (city.length === 0) errors.push("City field must be filled out")
+    if (name.length === 0) errors.push("Lodging Name is required")
+    if (name.length > 30) errors.push("Name must be 30 characters or less")
+    if (imgUrl.length === 0) errors.push("Image URL is required")
+    if (addressLineOne.length === 0) errors.push("Address Line 1 is required")
+    if (city.length === 0) errors.push("City is required")
     if (city.length > 30) errors.push("City field must be 30 characters or less")
-    if (state.length === 0) errors.push("State field is required")
+    if (state.length === 0) errors.push("State is required")
     if (state.length > 2) errors.push("State field must be 2 characters: ie CA for California")
-    if (postalCode.length === 0) errors.push("Zip field is required")
+    if (postalCode.length === 0) errors.push("Zip Code is required")
     if (postalCode.length !== 5) errors.push("Zip field must be 5 digits")
     if (country.length === 0) errors.push("Country field is required")
     if (country.length > 30) errors.push("Country field must be 30 characters or less")
@@ -84,7 +86,7 @@ function NewLodgingForm({lodgings}) {
         ))}
       </ul>
       <label>
-        Name:
+        Lodging Name:
         <input
           type="text"
           name="name"
@@ -92,6 +94,15 @@ function NewLodgingForm({lodgings}) {
           onChange={(event) => setName(event.target.value)}
         />
       </label>
+      <label>
+        Image URL:
+        <input
+          type="text"
+          name="imgUrl"
+          value={imgUrl}
+          onChange={(event) => setImgUrl(event.target.value)}
+        />
+       </label>
       <label>
         Address Line 1:
         <input

@@ -15,7 +15,7 @@ router.get('/', asyncHandler(async (req, res) => {
     res.json(lodgings)
 }));
 
-//TODO Get all lodgings by category
+//! Get all lodgings by category
 
 router.get('categories/:categoryId', asyncHandler(async (req, res) => {
     const category = await Category.findByPk(req.params.categoryId)
@@ -24,7 +24,7 @@ router.get('categories/:categoryId', asyncHandler(async (req, res) => {
             categoryId: category.id
         },
     });
-    return res.json(lodgings)
+    res.json(lodgings)
 }));
 
 //TODO Add new lodging
@@ -42,13 +42,17 @@ router.get('categories/:categoryId', asyncHandler(async (req, res) => {
 //         description: req.body.description,
 //         categoryId: req.body.categoryId,
 //         wifi: req.body.wifi,
-//         addressId: address.id
+//         addressId: address.id,
 //         price: req.body.price,
 //         breakfast: req.body.breakfast,
 //         pool: req.body.pool,
 //     });
-//  const images = awaiot new  Imag
-//  lodingId = lodging.id
-
+//     const image = await new Image.create({
+//         imgUrl = req.body.imgUrl,
+//         lodgingId = lodging.id
+//     })
+//     res.json(address, lodging, image)
+//     return res.redirect(`${req.baseUrl}/${lodging.id}`)
 // }));
+
 module.exports = router;
