@@ -56,10 +56,9 @@
 }
 
 .logo {
-    width: 150px;
-    height: 45px;
-    box-sizing: border-box;
+    max-width: 20em;
+    height: 3em;
     position: relative;
-    margin-top: 2px;
-    margin-left: 35px;
+    padding: 3px;
+    margin-left: 5px;
   }

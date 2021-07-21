@@ -15,7 +15,10 @@ const LodgingsBrowser = () => {
     return (
       <div className="lodgings-browser">
           {lodgings?.map(lodging => (
-              <div>{lodging.name}</div>
+                <div>
+                    <h2>{lodging.name}</h2>
+                    <img src={lodging.Images[0].imgUrl}/>
+                </div>
           ))}
       </div>
     )
