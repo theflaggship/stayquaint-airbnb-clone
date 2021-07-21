@@ -26,7 +26,7 @@ function Navigation({ isLoaded }){
     <div className="nav-container">
       <div className="left-nav">
         <NavLink exact to="/">
-            <img className="logo" src="https://i.imgur.com/fRN4FmY.png"/>
+            <img className="logo" src="https://i.imgur.com/LOv8ujp.png"/>
         </NavLink>
       </div>
       <div className="mid-nav">
