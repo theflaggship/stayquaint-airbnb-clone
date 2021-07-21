@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink, Route, useParams } from 'react-router-dom';
 import {getLodgings} from '../../store/lodgings';
+import './LodgingsBrowser.css'
 
 const LodgingsBrowser = () => {
     const dispatch = useDispatch();
@@ -15,9 +16,10 @@ const LodgingsBrowser = () => {
     return (
       <div className="lodgings-browser">
           {lodgings?.map(lodging => (
-                <div>
-                    <h2>{lodging.name}</h2>
-                    <img src={lodging.Images[0].imgUrl}/>
+                <div className="lodging-container">
+                    <img className="lodging-img" src={lodging.Images[0].imgUrl}/>
+                    <p className="lodging-name">{lodging.name}</p>
+                    <p className="lodging-price">{lodging.price}</p>
                 </div>
           ))}
       </div>

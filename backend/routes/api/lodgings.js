@@ -10,7 +10,7 @@ const router = express.Router();
 
 router.get('/', asyncHandler(async (req, res) => {
     const lodgings = await Lodging.findAll(
-        {include: Image}
+        {include: Image, Address}
     )
     res.json(lodgings)
 }));
@@ -28,31 +28,51 @@ router.get('categories/:categoryId', asyncHandler(async (req, res) => {
 }));
 
 //TODO Add new lodging
-// router.post('/', requireAuth, asyncHandler(async (req, res) => {
-//     const address = await Address.create({
-//         addressLineOne = req.body.addressLineOne,
-//         addressLineTwo = req.body.addressLineTwo,
-//         city = req.body.city,
-//         state = req.body.state,
-//         postalCode = req.body.postalCode,
-//         country = req.body.country,
-//     })
-//     const lodging = await Lodging.create({
-//         name: req.body.name,
-//         description: req.body.description,
-//         categoryId: req.body.categoryId,
-//         wifi: req.body.wifi,
-//         addressId: address.id,
-//         price: req.body.price,
-//         breakfast: req.body.breakfast,
-//         pool: req.body.pool,
-//     });
-//     const image = await new Image.create({
-//         imgUrl = req.body.imgUrl,
-//         lodgingId = lodging.id
-//     })
-//     res.json(address, lodging, image)
-//     return res.redirect(`${req.baseUrl}/${lodging.id}`)
-// }));
+router.post('/', requireAuth, asyncHandler(async (req, res) => {
+    const {
+        addressLineOne,
+        addressLineTwo,
+        city,
+        state,
+        postalCode,
+        country,
+        name,
+        description,
+        categoryId,
+        wifi,
+        price,
+        breakfast,
+        pool,
+        imgUrl,
+    } = req.body
+
+    const { user } = req
+
+    const address = await Address.create({
+        addressLineOne,
+        addressLineTwo,
+        city,
+        state,
+        postalCode,
+        country,
+    })
+    const lodging = await Lodging.create({
+        name,
+        description,
+        categoryId,
+        wifi,
+        addressId: address.id,
+        userId: user.id,
+        price,
+        breakfast,
+        pool
+    });
+    const image = await new Image.create({
+        imgUrl,
+        lodgingId: lodging.id
+    })
+    res.json(address, lodging, image)
+    return res.redirect(`${req.baseUrl}/${lodging.id}`)
+}));
 
 module.exports = router;
