@@ -23,3 +23,11 @@
   font-size: large;
   font-family: "Poppins", sans-serif;
 }
+
+.login-button {
+  background-color: none;
+    font-size: medium;
+    border: 1px solid gray;
+    border-radius: 20px;
+    padding: 5px 15px 5px 15px;
+}

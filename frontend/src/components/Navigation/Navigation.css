@@ -1,3 +1,27 @@
+.nav-container {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: space-around;
+    box-shadow: 0px 0px 2px .5px black;
+}
+
+.right-nav {
+    display: flex;
+    justify-content: right;
+    align-items:center;
+    padding-right: 65px;
+}
+
+.middle-nav {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    padding-right: 65px;
+    width: 310px;
+}
+
 .profile-icon {
     font-size: 20px;
     color: rgb(35, 35, 35);
@@ -6,3 +30,36 @@
 .profile-button {
     background-color: none;
 }
+
+.signup-button {
+    background-color: none;
+    font-size: medium;
+    border: 1px solid gray;
+    border-radius: 20px;
+    padding: 5px 15px 5px 15px;
+}
+
+.login-button {
+    background-color: none;
+    font-size: medium;
+    border: 1px solid gray;
+    border-radius: 20px;
+    padding: 5px 15px 5px 15px;
+}
+
+.searchInput {
+    border-radius: 20px;
+    padding: 7px;
+    width: 300px;
+    margin-top: 10px;
+    border: .5px solid gray;
+}
+
+.logo {
+    width: 150px;
+    height: 50px;
+    box-sizing: border-box;
+    position: relative;
+    margin-top: 2px;
+    margin-left: 35px;
+  }

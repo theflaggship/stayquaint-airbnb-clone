@@ -12,23 +12,44 @@ function Navigation({ isLoaded }){
   if (sessionUser) {
     sessionLinks = (
       <ProfileButton user={sessionUser} />
-    );
+      );
+    {isLoaded && sessionLinks}
   } else {
     sessionLinks = (
       <>
-        <LoginFormModal />
-        <NavLink to="/signup">Sign Up</NavLink>
+        <div className="right-nav">
+          <ProfileButton />
+            <ul>
+              <li>
+                <NavLink to="/signup" className="signup-button">Sign Up</NavLink>
+              </li>
+              <li>
+                <LoginFormModal />
+              </li>
+            </ul>
+        </div>
       </>
     );
   }
 
   return (
-    <ul>
-      <li>
-        <NavLink exact to="/">Home</NavLink>
+    <div className="nav-container">
+      <div className="left-nav">
+        <NavLink exact to="/">
+            <img className="logo" src="https://i.imgur.com/fRN4FmY.png"/>
+        </NavLink>
+      </div>
+      <div className="mid-nav">
+        <div className="search">
+            <form>
+                <input className="searchInput"></input>
+            </form>
+        </div>
+      </div>
+      <div className="right-nav">
         {isLoaded && sessionLinks}
-      </li>
-    </ul>
+      </div>
+    </div>
   );
 }
 
