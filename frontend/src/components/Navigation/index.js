@@ -13,21 +13,11 @@ function Navigation({ isLoaded }){
     sessionLinks = (
       <ProfileButton user={sessionUser} />
       );
-    {isLoaded && sessionLinks}
   } else {
     sessionLinks = (
       <>
-        <div className="right-nav">
-          <ProfileButton />
-            <ul>
-              <li>
-                <NavLink to="/signup" className="signup-button">Sign Up</NavLink>
-              </li>
-              <li>
-                <LoginFormModal />
-              </li>
-            </ul>
-        </div>
+        <NavLink to="/signup" className="signup-button">Sign Up</NavLink>
+        <LoginFormModal />
       </>
     );
   }

@@ -4,7 +4,8 @@ import { Route, Switch } from "react-router-dom";
 import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
-import LodgingsBrowser from "./components/LodgingsBrowser/LodgingsBrowser";
+import LodgingsBrowser from "./components/LodgingsBrowser";
+import NewLodgingForm from "./components/NewLodgingForm";
 
 function App() {
   const dispatch = useDispatch();
@@ -24,6 +25,7 @@ function App() {
         </Switch>
       )}
       <LodgingsBrowser />
+      <NewLodgingForm />
     </>
   );
 }

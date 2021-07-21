@@ -6,26 +6,17 @@ import {getLodgings} from '../../store/lodgings';
 const LodgingsBrowser = () => {
     const dispatch = useDispatch();
     const { lodgingId } = useParams();
-    const lodgings = useSelector(state => {
-        return state.lodgings.map(lodgingId => state.lodgings[lodgingId])
-    });
+    const lodgings = Object.values(useSelector(state => state.lodgings.list))
 
     useEffect(() => {
         dispatch(getLodgings())
-    }, [])
+    }, [dispatch])
 
     return (
       <div className="lodgings-browser">
-          <h1>Lodgings</h1>
-          {lodgings.map(lodging => {
-             <div>{lodging.name}</div>
-            //   return (
-            //       <NavLink key={lodging.name} to={`lodgings'/${lodging.id}`}>
-            //           <div>{lodging.name}</div>
-            //       </NavLink>
-            //   )
-            })
-          }
+          {lodgings?.map(lodging => (
+              <div>{lodging.name}</div>
+          ))}
       </div>
     )
 }
