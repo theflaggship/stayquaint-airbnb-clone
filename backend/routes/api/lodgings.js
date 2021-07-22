@@ -16,7 +16,16 @@ router.get('/', asyncHandler(async (req, res) => {
     res.json(lodgings)
 }));
 
-//! Get all lodgings by category
+// Get single lodging
+
+router.get('/:id', asyncHandler(async (req, res) => {
+    const lodging = await Lodging.findByPk(req.params.id,
+        {include: Image, Category, Review, Address}
+    )
+    res.json(lodging)
+}));
+
+// Get all lodgings by category
 
 router.get('/categories/:categoryId', asyncHandler(async (req, res) => {
     const category = await Category.findByPk(req.params.categoryId)
@@ -28,7 +37,9 @@ router.get('/categories/:categoryId', asyncHandler(async (req, res) => {
     res.json(lodgings)
 }));
 
-//TODO Add new lodging
+
+
+// Add new lodging
 router.post('/', asyncHandler(async (req, res) => {
     const {
         addressLineOne,
@@ -73,5 +84,10 @@ router.post('/', asyncHandler(async (req, res) => {
     })
     res.json({address, lodging, image})
 }));
+
+//TODO Edit lodging
+
+//TODO Delete lodging
+
 
 module.exports = router;

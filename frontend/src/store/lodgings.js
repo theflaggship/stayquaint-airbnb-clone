@@ -30,7 +30,6 @@ export const getLodging = (id) => async dispatch => {
 };
 
 export const createLodging = (payload) => async dispatch => {
-  console.log("=======",payload, "===========");
   const response = await csrfFetch('/api/lodgings', {
       method: 'POST',
       body: JSON.stringify(payload),
