@@ -18,7 +18,7 @@ router.get('/', asyncHandler(async (req, res) => {
 
 //! Get all lodgings by category
 
-router.get('categories/:categoryId', asyncHandler(async (req, res) => {
+router.get('/categories/:categoryId', asyncHandler(async (req, res) => {
     const category = await Category.findByPk(req.params.categoryId)
     const lodgings = await Lodging.findAll({
         where: {
@@ -29,7 +29,7 @@ router.get('categories/:categoryId', asyncHandler(async (req, res) => {
 }));
 
 //TODO Add new lodging
-router.post('/', requireAuth, asyncHandler(async (req, res) => {
+router.post('/', asyncHandler(async (req, res) => {
     const {
         addressLineOne,
         addressLineTwo,
@@ -72,7 +72,7 @@ router.post('/', requireAuth, asyncHandler(async (req, res) => {
         imgUrl,
         lodgingId: lodging.id
     })
-    res.json(address, lodging, image)
+    res.json({address, lodging, image})
 }));
 
 module.exports = router;

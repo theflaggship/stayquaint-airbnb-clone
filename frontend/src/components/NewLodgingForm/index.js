@@ -33,20 +33,20 @@ const CATEGORIES = [
 
 function NewLodgingForm({lodgings}) {
 
-  const [name, setName] = useState('');
-  const [imgUrl, setImgUrl] = useState('');
-  const [addressLineOne, setAddressLineOne] = useState('')
+  const [name, setName] = useState('Test');
+  const [imgUrl, setImgUrl] = useState('test.png');
+  const [addressLineOne, setAddressLineOne] = useState('123 Test')
   const [addressLineTwo, setAddressLineTwo] = useState('')
-  const [city, setCity] = useState('')
-  const [state, setState] = useState('')
-  const [postalCode, setPostalCode] = useState('')
-  const [country, setCountry] = useState('')
-  const [description, setDescription] = useState('')
-  const [price, setPrice] = useState('')
+  const [city, setCity] = useState('Test')
+  const [state, setState] = useState('CA')
+  const [postalCode, setPostalCode] = useState('99999')
+  const [country, setCountry] = useState('US')
+  const [description, setDescription] = useState('Test')
+  const [price, setPrice] = useState('100')
   const [breakfast, setBreakfast] = useState(false)
   const [pool, setPool] = useState(false)
   const [wifi, setWifi] = useState(false)
-  const [categoryId, setCategoryId] = useState(null);
+  const [categoryId, setCategoryId] = useState(1);
   const [errors, setErrors] = useState([])
   const history = useHistory()
   const dispatch = useDispatch()
@@ -72,7 +72,7 @@ function NewLodgingForm({lodgings}) {
   }, [name, addressLineOne, city, state, postalCode, country, description, price])
 
   const handleSubmit = () => {
-    const body = {
+    const payload = {
       addressLineOne,
       addressLineTwo,
       city,
@@ -88,7 +88,7 @@ function NewLodgingForm({lodgings}) {
       pool,
       imgUrl,
     }
-    dispatch(createLodging(body))
+    dispatch(createLodging(payload))
   }
 
   return (
@@ -145,6 +145,7 @@ function NewLodgingForm({lodgings}) {
           value={state}
           onChange={(event) => setState(event.target.value)}
         >
+          <option value="" disabled selected>Select a State</option>
           {STATES.map(state => (
             <option
               key={state}
@@ -172,6 +173,7 @@ function NewLodgingForm({lodgings}) {
           value={categoryId}
           onChange={(event) => setCategoryId(event.target.value)}
         >
+          <option value="" disabled selected>Select a Category</option>
           {CATEGORIES.map(category => (
             <option
               key={category.id}
