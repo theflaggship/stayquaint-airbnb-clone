@@ -12,6 +12,14 @@
     background-color: #FFFFFF;
 }
 
+.profile-dropdown {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
 .left-nav {
     margin-left: 35px;
 }
@@ -83,4 +91,31 @@
       margin-right: 7px;
       color: black;
       text-decoration: none;
+  }
+
+  .profile-icon {
+      background-color: #FFFFFF;
+      border: .5px solid rgb(167, 167, 167);
+      padding: 3px 15px 3px 15px;
+      border-radius: 20px;
+  }
+
+  .fa-user-circle {
+      font-size: 25px;
+  }
+
+  .username {
+      color:rgb(125, 125, 125)
+  }
+  .my-bookings-link,
+  .my-accommodations-link {
+      text-decoration: none;
+      color: black;
+  }
+
+  .my-bookings-link,
+  .my-accommodations-link,
+  .username {
+      padding: 10px;
+      border-bottom: rgb(167, 167, 167) 1px solid;
   }

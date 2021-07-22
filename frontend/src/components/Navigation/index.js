@@ -11,7 +11,10 @@ function Navigation({ isLoaded }){
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <ProfileButton user={sessionUser} />
+      <>
+        <NavLink className="add-accommodation-link" to="/lodgings">Add Accommodation</NavLink>
+        <ProfileButton user={sessionUser} />
+      </>
       );
   } else {
     sessionLinks = (
@@ -37,7 +40,6 @@ function Navigation({ isLoaded }){
         </div>
       </div>
       <div className="right-nav">
-        <NavLink className="add-accommodation-link" to="/lodgings">Add Accommodation</NavLink>
         {isLoaded && sessionLinks}
       </div>
     </div>

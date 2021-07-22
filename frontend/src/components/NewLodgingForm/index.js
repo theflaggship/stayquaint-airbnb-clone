@@ -33,20 +33,20 @@ const CATEGORIES = [
 
 function NewLodgingForm({lodgings}) {
 
-  const [name, setName] = useState('Test');
-  const [imgUrl, setImgUrl] = useState('test.png');
-  const [addressLineOne, setAddressLineOne] = useState('123 Test')
+  const [name, setName] = useState('');
+  const [imgUrl, setImgUrl] = useState('');
+  const [addressLineOne, setAddressLineOne] = useState('')
   const [addressLineTwo, setAddressLineTwo] = useState('')
-  const [city, setCity] = useState('Test')
-  const [state, setState] = useState('CA')
-  const [postalCode, setPostalCode] = useState('99999')
-  const [country, setCountry] = useState('US')
-  const [description, setDescription] = useState('Test')
-  const [price, setPrice] = useState('100')
+  const [city, setCity] = useState('')
+  const [state, setState] = useState('')
+  const [postalCode, setPostalCode] = useState('')
+  const [country, setCountry] = useState('')
+  const [description, setDescription] = useState('')
+  const [price, setPrice] = useState('')
   const [breakfast, setBreakfast] = useState(false)
   const [pool, setPool] = useState(false)
   const [wifi, setWifi] = useState(false)
-  const [categoryId, setCategoryId] = useState(1);
+  const [categoryId, setCategoryId] = useState(null);
   const [errors, setErrors] = useState([])
   const history = useHistory()
   const dispatch = useDispatch()
@@ -102,13 +102,6 @@ function NewLodgingForm({lodgings}) {
       onSubmit={handleSubmit}
     >
       <h2>Add Accommodation</h2>
-      <ul className="errors">
-        {errors.map(error => (
-          <li key={error}>
-            {error}
-          </li>
-        ))}
-      </ul>
       <div className="form-group">
         <input
           placeHolder="Lodging Name"
@@ -234,6 +227,13 @@ function NewLodgingForm({lodgings}) {
             value={price}
             onChange={(event) => setPrice(event.target.value)}
           />
+          <ul className="errors">
+            {errors.map(error => (
+            <li key={error}>
+            *** {error}
+            </li>
+            ))}
+          </ul>
           <button
             className="create-button"
             type="submit"

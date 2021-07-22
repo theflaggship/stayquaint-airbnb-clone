@@ -3,4 +3,11 @@
 
 a {
     text-decoration: none;
-    }
+    font-family: 'Mukta', sans-serif;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }

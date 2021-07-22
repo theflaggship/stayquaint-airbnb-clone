@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Gotu&family=Mukta:wght@200;300;400;500&display=swap');
+
+
 .new-lodging-form,
 .form-group {
     display: flex;
@@ -13,10 +16,13 @@
 }
 
 input,
-select {
+select,
+textarea {
     width: 100%;
     padding: 10px;
     margin: 10px;
+    font-family: 'Mukta', sans-serif;
+    font-size: 16px;
 }
 
 .checkbox-group {
@@ -55,8 +61,15 @@ select {
 
 }
 
-/* .wifi-label,
+.wifi-label,
 .pool-label,
 .breakfast-label {
+    font-family: 'Mukta', sans-serif;
+}
 
-} */
+.errors {
+    font-family: 'Mukta', sans-serif;
+    color: rgb(137, 39, 17);
+    margin-left: auto;
+    margin-right: auto;
+}
