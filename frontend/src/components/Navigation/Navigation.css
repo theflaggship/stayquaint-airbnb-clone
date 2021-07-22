@@ -17,7 +17,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: rgb(35, 35, 35) 0px 2px 2px;
 }
 
 .left-nav {
