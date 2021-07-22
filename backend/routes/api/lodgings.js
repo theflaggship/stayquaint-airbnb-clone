@@ -11,7 +11,7 @@ const router = express.Router();
 
 router.get('/', asyncHandler(async (req, res) => {
     const lodgings = await Lodging.findAll(
-        {include: Image, Address}
+        {include: [Image, Address]}
     )
     res.json(lodgings)
 }));
@@ -20,7 +20,7 @@ router.get('/', asyncHandler(async (req, res) => {
 
 router.get('/:id', asyncHandler(async (req, res) => {
     const lodging = await Lodging.findByPk(req.params.id,
-        {include: Image, Category, Review, Address}
+        {include: [Image, Category, Review, Address]}
     )
     res.json(lodging)
 }));

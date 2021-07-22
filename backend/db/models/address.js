@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Address.associate = function(models) {
     // associations can be defined here
-    Address.belongsTo(models.Lodging, {foreignKey: 'addressId'});
+    Address.hasMany(models.Lodging, {foreignKey: 'addressId'});
   };
   return Address;
 };

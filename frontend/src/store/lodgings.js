@@ -42,39 +42,23 @@ export const createLodging = (payload) => async dispatch => {
   }
 }
 
-
-
-const initialState = {
-  list: {},
-};
-
-const lodgingsReducer = (state = initialState, action) => {
+const lodgingsReducer = (state = {}, action) => {
   if (!action) return state;
   switch (action.type) {
     case LOAD: {
-      const allLodgings = {};
+      const newState = {}
       action.list.forEach(lodging => {
-          allLodgings[lodging.id] = lodging;
+          newState[lodging.id] = lodging;
       });
-      return {
-        ...state,
-        list: allLodgings
-      };
+      return newState;
     }
     case ADD_ONE: {
-      if (!state[action.lodging.id]) {
-          const newState = {
-              ...state,
-              [action.lodging.id]: action.lodging
-          }
-        return {
-          ...state,
-          list: {
-            ...state.list,
-            [action.lodging.id]: action.lodging
-          }
-        };
+      const newState = {
+        ...state,
+        [action.lodging.id]: action.lodging
       }
+
+      return newState;
     }
     default:
         return state;

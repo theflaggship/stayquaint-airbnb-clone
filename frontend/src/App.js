@@ -6,6 +6,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import LodgingsBrowser from "./components/LodgingsBrowser";
 import NewLodgingForm from "./components/NewLodgingForm";
+import LodgingPage from "./components/LodgingPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -29,9 +30,9 @@ function App() {
           <Route path="/lodgings" exact>
             <NewLodgingForm />
           </Route>
-          {/* <Route path="/lodgings/:id">
-            <Lodging />
-          </Route> */}
+          <Route path="/lodgings/:id">
+            <LodgingPage />
+          </Route>
         </Switch>
       )}
     </>

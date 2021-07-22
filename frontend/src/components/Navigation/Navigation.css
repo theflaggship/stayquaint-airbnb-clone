@@ -17,7 +17,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    box-shadow: rgb(35, 35, 35) 0px 2px 2px;
+    box-shadow: rgb(35, 35, 35) 0px 0px 4px;
 }
 
 .left-nav {
@@ -38,11 +38,6 @@
     align-items:center;
     padding-right: 65px;
     width: 310px;
-}
-
-.profile-icon {
-    font-size: 20px;
-    color: rgb(35, 35, 35);
 }
 
 .profile-button {

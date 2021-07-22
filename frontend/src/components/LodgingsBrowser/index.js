@@ -6,7 +6,7 @@ import './LodgingsBrowser.css'
 
 const LodgingsBrowser = () => {
     const dispatch = useDispatch();
-    const lodgings = Object.values(useSelector(state => state.lodgings.list))
+    const lodgings = Object.values(useSelector(state => state.lodgings))
 
     useEffect(() => {
         dispatch(getLodgings())
