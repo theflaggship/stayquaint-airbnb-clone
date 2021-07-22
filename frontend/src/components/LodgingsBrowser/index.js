@@ -19,7 +19,7 @@ const LodgingsBrowser = () => {
                 <div className="lodging-container">
                     <img className="lodging-img" src={lodging.Images[0].imgUrl}/>
                     <p className="lodging-name">{lodging.name}</p>
-                    <p className="lodging-price">{lodging.price}</p>
+                    <p className="lodging-price">${lodging.price} / night</p>
                 </div>
           ))}
       </div>

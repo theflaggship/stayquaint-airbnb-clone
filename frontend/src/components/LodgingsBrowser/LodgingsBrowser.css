@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Gotu&family=Mukta:wght@200;300;400;500&display=swap');
+
+
 .lodgings-browser {
     display: flex;
     flex-direction: row;
@@ -20,4 +23,25 @@
     border-bottom: 1px solid rgb(215, 214, 214);
     margin: 15px;
     margin-bottom: 5px;
+}
+
+.lodging-name {
+    font-size: 1.2rem;
+    font-family: 'Mukta', sans-serif;
+    padding: 0px;
+    margin: 0px;
+    margin-left: 8px;
+    margin-top: 8px;
+    font-weight: lighter;
+}
+
+.lodging-price {
+    font-family: 'Mukta', sans-serif;
+    font-size: 1rem;
+    padding: 0px;
+    margin-top: 10px;
+    margin: 0px;
+    display: flex;
+    justify-content: flex-end;
+    color: rgb(121, 121, 121)
 }
