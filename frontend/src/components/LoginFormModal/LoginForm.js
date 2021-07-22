@@ -29,7 +29,7 @@ function LoginForm() {
           ))}
         </ul>
         <div className="cred-div">
-          <h2>Log in</h2>
+          <h2>Welcome to stayQuaint</h2>
           <input
             className="cred-input"
             placeHolder="Username or Email"
@@ -49,7 +49,7 @@ function LoginForm() {
             required
           />
         </div>
-        <button className="login-button button" type="submit">Log In</button>
+        <button className="modal-login-button button" type="submit">Log In</button>
       </form>
     </div>
   );

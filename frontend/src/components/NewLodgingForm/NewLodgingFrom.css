@@ -1,0 +1,19 @@
+.new-lodging-form,
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+}

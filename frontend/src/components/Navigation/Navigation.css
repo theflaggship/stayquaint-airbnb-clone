@@ -1,15 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Gotu&family=Mukta:wght@200;300;400;500&display=swap');
+
 .nav-container {
     z-index: 10000;
     position: fixed;
     top: 0px;
     width: 100%;
     display: flex;
-    width: 100%;
     flex-direction: row;
     justify-content: space-between;
     align-content: space-around;
-    box-shadow: 0px 0px 2px .5px black;
-    background-color: white;
+    background-color: #FFFFFF;
+}
+
+.left-nav {
+    margin-left: 35px;
 }
 
 .right-nav {
@@ -17,6 +21,7 @@
     justify-content: right;
     align-items:center;
     padding-right: 65px;
+    font-family: 'Mukta', sans-serif;
 }
 
 .middle-nav {
@@ -56,14 +61,14 @@
     border-radius: 20px;
     padding: 7px;
     width: 300px;
-    margin-top: 10px;
+    margin-top: 15px;
     border: .5px solid gray;
 }
 
 .logo {
     max-width: 20em;
     height: 3em;
-    position: relative;
     padding: 3px;
     margin-left: 5px;
+    margin-top: 5px;
   }

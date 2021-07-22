@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react'
 import {useDispatch} from 'react-redux'
 import {useHistory} from 'react-router-dom'
 import createLodging from '../../store/lodgings'
+import './NewLodgingFrom.css'
 
 const STATES = [
   'AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL',
@@ -30,20 +31,20 @@ const CATEGORIES = [
 
 function NewLodgingForm({lodgings}) {
 
-  const [name, setName] = useState('Test');
-  const [imgUrl, setImgUrl] = useState('test.png');
-  const [addressLineOne, setAddressLineOne] = useState('test')
+  const [name, setName] = useState('');
+  const [imgUrl, setImgUrl] = useState('');
+  const [addressLineOne, setAddressLineOne] = useState('')
   const [addressLineTwo, setAddressLineTwo] = useState('')
-  const [city, setCity] = useState('test')
-  const [state, setState] = useState('te')
-  const [postalCode, setPostalCode] = useState('99999')
-  const [country, setCountry] = useState('test')
-  const [description, setDescription] = useState('test')
-  const [price, setPrice] = useState('100')
+  const [city, setCity] = useState('')
+  const [state, setState] = useState('')
+  const [postalCode, setPostalCode] = useState('')
+  const [country, setCountry] = useState('')
+  const [description, setDescription] = useState('')
+  const [price, setPrice] = useState('')
   const [breakfast, setBreakfast] = useState(false)
   const [pool, setPool] = useState(false)
   const [wifi, setWifi] = useState(false)
-  const [categoryId, setCategoryId] = useState(1);
+  const [categoryId, setCategoryId] = useState(null);
   const [errors, setErrors] = useState([])
   const history = useHistory()
   const dispatch = useDispatch()
@@ -101,54 +102,44 @@ function NewLodgingForm({lodgings}) {
           </li>
         ))}
       </ul>
-      <label>
-        Lodging Name:
+      <div className="form-group">
         <input
+          placeHolder="Lodging Name"
           type="text"
           name="name"
           value={name}
           onChange={(event) => setName(event.target.value)}
         />
-      </label>
-      <label>
-        Image URL:
         <input
+          placeHolder="Image URL .png or .jpg"
           type="text"
           name="imgUrl"
           value={imgUrl}
           onChange={(event) => setImgUrl(event.target.value)}
         />
-       </label>
-      <label>
-        Address Line 1:
         <input
+          placeHolder="Address Line 1"
           type="text"
           name="addressLineOne"
           value={addressLineOne}
           onChange={(event) => setAddressLineOne(event.target.value)}
         />
-      </label>
-      <label>
-        Address Line 2:
         <input
+          placeHolder="Address Line 2"
           type="text"
           name="addressLineTwo"
           value={addressLineTwo}
           onChange={(event) => setAddressLineTwo(event.target.value)}
         />
-      </label>
-      <label>
-        City:
         <input
+          placeHolder="City"
           type="text"
           name="city"
           value={city}
           onChange={(event) => setCity(event.target.value)}
         />
-       </label>
-       <label>
-        Select a State:
         <select
+          placeHolder="Select State"
           value={state}
           onChange={(event) => setState(event.target.value)}
         >
@@ -160,28 +151,22 @@ function NewLodgingForm({lodgings}) {
             </option>
           ))}
         </select>
-       </label>
-       <label>
-        Zip Code:
         <input
+          placeHolder="Zip Code"
           type="text"
           name="postalCode"
           value={postalCode}
           onChange={(event) => setPostalCode(event.target.value)}
         />
-       </label>
-       <label>
-        Country:
         <input
+          placeHolder="Country"
           type="text"
           name="country"
           value={country}
           onChange={(event) => setCountry(event.target.value)}
         />
-       </label>
-       <label>
-        Select a Category
         <select
+          placeHolder="Select Category"
           value={categoryId}
           onChange={(event) => setCategoryId(event.target.value)}
         >
@@ -194,8 +179,7 @@ function NewLodgingForm({lodgings}) {
             </option>
           ))}
         </select>
-      </label>
-      <label>
+        <label>
           Free Wifi:
           <input
             type="checkbox"
@@ -222,29 +206,26 @@ function NewLodgingForm({lodgings}) {
               onChange={(event) => setBreakfast(event.target.checked)}
             />
           </label>
-          <label>
-            Description:
             <textarea
+              placeHolder="Description"
               name="description"
               value={description}
               onChange={(event) => setDescription(event.target.value)}
             />
-          </label>
-          <label>
-            Price:
             <input
+              placeHolder="Price per night"
               type="text"
               name="price"
               value={price}
               onChange={(event) => setPrice(event.target.value)}
             />
-          </label>
-      <button
-        type="submit"
-        disabled={errors.length > 0}
-      >
-        Creat Accommodation
-      </button>
+        <button
+          type="submit"
+          disabled={errors.length > 0}
+        >
+          Creat Accommodation
+        </button>
+      </div>
     </form>
   );
 }
