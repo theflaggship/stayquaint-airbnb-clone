@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react'
-import {useDispatch} from 'react-redux'
+import {useSelector, useDispatch} from 'react-redux'
 import {useHistory} from 'react-router-dom'
-import createLodging from '../../store/lodgings'
+import {createLodging} from '../../store/lodgings'
 import './NewLodgingFrom.css'
 
 const STATES = [
@@ -51,6 +51,8 @@ function NewLodgingForm({lodgings}) {
   const history = useHistory()
   const dispatch = useDispatch()
 
+  const user = useSelector(state => state.session.user)
+
   useEffect(() => {
     const errors = []
     if (name.length === 0) errors.push("Lodging Name is required")
@@ -71,7 +73,9 @@ function NewLodgingForm({lodgings}) {
     setErrors(errors)
   }, [name, addressLineOne, city, state, postalCode, country, description, price])
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
     const payload = {
       addressLineOne,
       addressLineTwo,
@@ -80,6 +84,7 @@ function NewLodgingForm({lodgings}) {
       postalCode,
       country,
       name,
+      id: user.id,
       description,
       categoryId,
       wifi,

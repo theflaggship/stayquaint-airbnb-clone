@@ -45,9 +45,8 @@ router.post('/', asyncHandler(async (req, res) => {
         breakfast,
         pool,
         imgUrl,
+        id
     } = req.body
-
-    const { user } = req
 
     const address = await Address.create({
         addressLineOne,
@@ -63,12 +62,12 @@ router.post('/', asyncHandler(async (req, res) => {
         categoryId,
         wifi,
         addressId: address.id,
-        userId: user.id,
+        userId: id,
         price,
         breakfast,
         pool
     });
-    const image = await new Image.create({
+    const image = await Image.create({
         imgUrl,
         lodgingId: lodging.id
     })

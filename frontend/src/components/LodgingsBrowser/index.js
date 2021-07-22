@@ -15,11 +15,13 @@ const LodgingsBrowser = () => {
     return (
       <div className="lodgings-browser">
           {lodgings?.map(lodging => (
+              <NavLink to={`/lodgings/${lodging.id}`}>
                 <div className="lodging-container">
-                    <img className="lodging-img" src={lodging.Images[0].imgUrl}/>
+                    {lodging.Images !== undefined && (<img className="lodging-img" src={lodging.Images[0].imgUrl}/>)}
                     <p className="lodging-name">{lodging.name}</p>
                     <p className="lodging-price">${lodging.price} / night</p>
                 </div>
+              </NavLink>
           ))}
       </div>
     )

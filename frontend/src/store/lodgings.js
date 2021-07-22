@@ -30,6 +30,7 @@ export const getLodging = (id) => async dispatch => {
 };
 
 export const createLodging = (payload) => async dispatch => {
+  console.log("=======",payload, "===========");
   const response = await csrfFetch('/api/lodgings', {
       method: 'POST',
       body: JSON.stringify(payload),
@@ -62,20 +63,19 @@ const lodgingsReducer = (state = initialState, action) => {
       };
     }
     case ADD_ONE: {
-      return state;
-      // if (!state[action.lodging.id]) {
-      //     const newState = {
-      //         ...state,
-      //         [action.lodging.id]: action.lodging
-      //     }
-      //   return {
-      //     ...state,
-      //     list: {
-      //       ...state.list,
-      //       [action.lodging.id]: action.lodging
-      //     }
-      //   };
-      // }
+      if (!state[action.lodging.id]) {
+          const newState = {
+              ...state,
+              [action.lodging.id]: action.lodging
+          }
+        return {
+          ...state,
+          list: {
+            ...state.list,
+            [action.lodging.id]: action.lodging
+          }
+        };
+      }
     }
     default:
         return state;
