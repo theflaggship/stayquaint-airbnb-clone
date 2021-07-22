@@ -12,22 +12,24 @@ const STATES = [
 ]
 
 const CATEGORIES = [
-    'Hotel',
-    'Inn',
-    'Bed & Breakfast',
-    'Cabin'
-]
+  {
+    id: 1,
+    type: 'Hotel'
+  },
+  {
+    id: 2,
+    type: 'Inn'
+  },
+  {
+    id: 3,
+    type: 'Bed & Breakfast'
+  },
+  {
+    id: 4,
+    type: 'Cabin'
+  },
 
-// const CATEGORIES = [
-//   {
-//     id: 1,
-//     type: 'Hotel'
-//   },
-//   {
-//     id: 2,
-//     type: 'Inn'
-//   }
-// ]
+]
 
 function NewLodgingForm({lodgings}) {
 
@@ -179,52 +181,59 @@ function NewLodgingForm({lodgings}) {
             </option>
           ))}
         </select>
-        <label>
-          Free Wifi:
-          <input
-            type="checkbox"
-            name="wifi"
-            value={wifi}
-            onChange={(event) => setWifi(event.target.checked)}
+          <div className="checkbox-group">
+            <label className="wifi-label">
+              Free Wifi:
+              <input
+                className="wifi-checkbox"
+                type="checkbox"
+                name="wifi"
+                value={wifi}
+                onChange={(event) => setWifi(event.target.checked)}
+              />
+            </label>
+            <label className="pool-label">
+              Pool:
+              <input
+                className="pool-checkbox"
+                type="checkbox"
+                name="pool"
+                value={pool}
+                onChange={(event) => setPool(event.target.checked)}
+              />
+            </label>
+            <label className="breakfast-label">
+                Free Breakfast:
+                <input
+                  className="breakfast-checkbox"
+                  type="checkbox"
+                  name="breakfast"
+                  value={breakfast}
+                  onChange={(event) => setBreakfast(event.target.checked)}
+                />
+              </label>
+          </div>
+          <textarea
+            className="lodging-description"
+            placeHolder="Description"
+            name="description"
+            value={description}
+            onChange={(event) => setDescription(event.target.value)}
           />
-        </label>
-        <label>
-          Pool:
           <input
-            type="checkbox"
-            name="pool"
-            value={pool}
-            onChange={(event) => setPool(event.target.checked)}
+            placeHolder="Price per night"
+            type="text"
+            name="price"
+            value={price}
+            onChange={(event) => setPrice(event.target.value)}
           />
-        </label>
-        <label>
-            Free Breakfast:
-            <input
-              type="checkbox"
-              name="breakfast"
-              value={breakfast}
-              onChange={(event) => setBreakfast(event.target.checked)}
-            />
-          </label>
-            <textarea
-              placeHolder="Description"
-              name="description"
-              value={description}
-              onChange={(event) => setDescription(event.target.value)}
-            />
-            <input
-              placeHolder="Price per night"
-              type="text"
-              name="price"
-              value={price}
-              onChange={(event) => setPrice(event.target.value)}
-            />
-        <button
-          type="submit"
-          disabled={errors.length > 0}
-        >
-          Creat Accommodation
-        </button>
+          <button
+            className="create-button"
+            type="submit"
+            disabled={errors.length > 0}
+          >
+            Creat Accommodation
+          </button>
       </div>
     </form>
   );
