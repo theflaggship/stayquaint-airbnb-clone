@@ -19,13 +19,17 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
+          <Route path="/" exact>
+            <LodgingsBrowser />
+          </Route>
           <Route path="/signup">
             <SignupFormPage />
           </Route>
+          <Route path="/lodgings">
+            <NewLodgingForm />
+          </Route>
         </Switch>
       )}
-      <LodgingsBrowser />
-      <NewLodgingForm />
     </>
   );
 }

@@ -4,6 +4,7 @@ const db = require('../../db/models');
 const { requireAuth } = require('../../utils/auth');
 const { User, Lodging, Booking, Review, Image, Category, Address } = db;
 const { check, validationResult } = require('express-validator');
+const { response } = require('express');
 const router = express.Router();
 
 //Get all lodgings
@@ -71,8 +72,8 @@ router.post('/', requireAuth, asyncHandler(async (req, res) => {
         imgUrl,
         lodgingId: lodging.id
     })
-    res.json(address, lodging, image)
-    return res.redirect(`${req.baseUrl}/${lodging.id}`)
+    console.log(res)
+    return res.json(address, lodging, image)
 }));
 
 module.exports = router;

@@ -37,6 +37,7 @@ function Navigation({ isLoaded }){
         </div>
       </div>
       <div className="right-nav">
+        <NavLink to="/lodgings">Add Accommodation</NavLink>
         {isLoaded && sessionLinks}
       </div>
     </div>
