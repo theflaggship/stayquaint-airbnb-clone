@@ -72,8 +72,7 @@ router.post('/', requireAuth, asyncHandler(async (req, res) => {
         imgUrl,
         lodgingId: lodging.id
     })
-    console.log(res)
-    return res.json(address, lodging, image)
+    res.json(address, lodging, image)
 }));
 
 module.exports = router;

@@ -12,6 +12,7 @@ function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
+    // dispatch(initSession());
   }, [dispatch]);
 
   return (
@@ -28,6 +29,9 @@ function App() {
           <Route path="/lodgings">
             <NewLodgingForm />
           </Route>
+          {/* <Route path="/lodgings/:id">
+            <Lodging />
+          </Route> */}
         </Switch>
       )}
     </>

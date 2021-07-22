@@ -16,6 +16,20 @@ const removeUser = () => {
   };
 };
 
+// exportconst initSession
+//  = (user) => async (dispatch) => {
+//   dispatch(loadingApp(true));
+//
+// disptatch(getLodgings());
+//   dispatch(getCategories());
+
+//   if (user) {
+//     dispatch(getBooking());
+//   }
+
+//   dispatch(loadingApp(false));
+// all data ready// }
+
 export const login = (user) => async (dispatch) => {
   const { credential, password } = user;
   const response = await csrfFetch('/api/session', {

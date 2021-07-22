@@ -38,12 +38,12 @@ export const createLodging = (payload) => async dispatch => {
         },
         body: JSON.stringify(payload),
     });
-
-    if (response.ok) {
-        const lodging = await response.json();
-        dispatch(addLodging(lodging));
-        return lodging;
-    }
+    console.log(response);
+//     if (response.ok) {
+//         const lodging = await response.json();
+//         dispatch(addLodging(lodging));
+//         return lodging;
+//     }
 }
 
 
@@ -53,6 +53,7 @@ const initialState = {
 };
 
 const lodgingsReducer = (state = initialState, action) => {
+  if (!action) return state;
   switch (action.type) {
     case LOAD: {
       const allLodgings = {};

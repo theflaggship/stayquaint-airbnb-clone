@@ -1,5 +1,7 @@
 import {useState, useEffect} from 'react'
+import {useDispatch} from 'react-redux'
 import {useHistory} from 'react-router-dom'
+import createLodging from '../../store/lodgings'
 
 const STATES = [
   'AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL',
@@ -15,24 +17,36 @@ const CATEGORIES = [
     'Cabin'
 ]
 
+// const CATEGORIES = [
+//   {
+//     id: 1,
+//     type: 'Hotel'
+//   },
+//   {
+//     id: 2,
+//     type: 'Inn'
+//   }
+// ]
+
 function NewLodgingForm({lodgings}) {
 
-  const [name, setName] = useState('');
-  const [imgUrl, setImgUrl] = useState('');
-  const [addressLineOne, setAddressLineOne] = useState('')
+  const [name, setName] = useState('Test');
+  const [imgUrl, setImgUrl] = useState('test.png');
+  const [addressLineOne, setAddressLineOne] = useState('test')
   const [addressLineTwo, setAddressLineTwo] = useState('')
-  const [city, setCity] = useState('')
-  const [state, setState] = useState('')
-  const [postalCode, setPostalCode] = useState('')
-  const [country, setCountry] = useState('')
-  const [description, setDescription] = useState('')
-  const [price, setPrice] = useState('')
+  const [city, setCity] = useState('test')
+  const [state, setState] = useState('te')
+  const [postalCode, setPostalCode] = useState('99999')
+  const [country, setCountry] = useState('test')
+  const [description, setDescription] = useState('test')
+  const [price, setPrice] = useState('100')
   const [breakfast, setBreakfast] = useState(false)
   const [pool, setPool] = useState(false)
   const [wifi, setWifi] = useState(false)
-  const [category, setCategory] = useState('')
+  const [categoryId, setCategoryId] = useState(1);
   const [errors, setErrors] = useState([])
   const history = useHistory()
+  const dispatch = useDispatch()
 
   useEffect(() => {
     const errors = []
@@ -55,21 +69,23 @@ function NewLodgingForm({lodgings}) {
   }, [name, addressLineOne, city, state, postalCode, country, description, price])
 
   const handleSubmit = () => {
-    const lodgingValues = {
-      name,
-      description,
-      price
-    }
-
-    const addressValues = {
+    const body = {
       addressLineOne,
       addressLineTwo,
       city,
       state,
       postalCode,
-      country
+      country,
+      name,
+      description,
+      categoryId,
+      wifi,
+      price,
+      breakfast,
+      pool,
+      imgUrl,
     }
-    history.push('/')
+    dispatch(createLodging(body))
   }
 
   return (
@@ -166,14 +182,15 @@ function NewLodgingForm({lodgings}) {
        <label>
         Select a Category
         <select
-          value={category}
-          onChange={(event) => setCategory(event.target.value)}
+          value={categoryId}
+          onChange={(event) => setCategoryId(event.target.value)}
         >
           {CATEGORIES.map(category => (
             <option
-              key={category}
+              key={category.id}
+              value={category.id}
             >
-              {category}
+              {category.type}
             </option>
           ))}
         </select>
