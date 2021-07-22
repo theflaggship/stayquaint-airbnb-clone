@@ -22,6 +22,7 @@ export const getLodgings = () => async dispatch => {
 };
 
 export const getLodging = (id) => async dispatch => {
+  console.log(id);
   const response = await csrfFetch(`/api/lodgings/${id}`);
   if (response.ok) {
       const lodging = await response.json();

@@ -19,6 +19,7 @@ router.get('/', asyncHandler(async (req, res) => {
 // Get single lodging
 
 router.get('/:id', asyncHandler(async (req, res) => {
+    console.log("=====insideroute====")
     const lodging = await Lodging.findByPk(req.params.id,
         {include: [Image, Category, Review, Address]}
     )

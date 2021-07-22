@@ -30,7 +30,7 @@ function App() {
           <Route path="/lodgings" exact>
             <NewLodgingForm />
           </Route>
-          <Route path="/lodgings/:id">
+          <Route path="/lodgings/:lodgingId">
             <LodgingPage />
           </Route>
         </Switch>
