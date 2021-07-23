@@ -64,6 +64,27 @@ export const createLodging = (payload) => async dispatch => {
   }
 }
 
+export const editLodging = (lodgingId, payload) => async dispatch => {
+  const response = await csrfFetch(`/api/lodgings/${lodgingId}`, {
+      method: 'PUT',
+      body: JSON.stringify(payload),
+  });
+  if (response.ok) {
+      const lodging = await response.json();
+      dispatch(editOneLodging(lodgingId));
+      return lodging;
+  }
+}
+
+export const deleteLodging = (lodgingId) => async dispatch => {
+  const response = await csrfFetch(`/api/lodgings/${lodgingId}`, {
+      method: 'DELETE',
+  });
+  if (response.ok) {
+      dispatch(deleteOneLodging(lodgingId));
+  }
+};
+
 const lodgingsReducer = (state = {}, action) => {
   if (!action) return state;
   switch (action.type) {

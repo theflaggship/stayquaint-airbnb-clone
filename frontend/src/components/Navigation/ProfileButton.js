@@ -60,12 +60,12 @@ function ProfileButton({ user, isLoaded }) {
   } else {
     sessionLinks = (
       <div className="nonuser-menu">
-        {/* <div className="menu-signup-container"> */}
+        <div className="menu-signup-container">
           <SignUpFormModal />
-        {/* </div> */}
-        {/* <div className="menu-login-container"> */}
+        </div>
+        <div className="menu-login-container">
           <LoginFormModal />
-        {/* </div> */}
+        </div>
         <div className="menu-demo-container">
           <button id="menu-demo-button" onClick={demoLogin}>Demo</button>
         </div>

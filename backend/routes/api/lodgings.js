@@ -88,7 +88,6 @@ router.post('/', asyncHandler(async (req, res) => {
 
 // Get lodgings by user
 router.get('/user/:userId', asyncHandler(async (req, res) => {
-    // const user = await User.findByPk(req.params.userId)
     const lodgings = await Lodging.findAll({
         where: {
             userId: req.params.userId
@@ -99,6 +98,51 @@ router.get('/user/:userId', asyncHandler(async (req, res) => {
 }));
 
 //TODO Edit lodging
+
+router.put('/:id', asyncHandler(async (req, res) => {
+    const {
+        addressLineOne,
+        addressLineTwo,
+        city,
+        state,
+        postalCode,
+        country,
+        name,
+        description,
+        categoryId,
+        wifi,
+        price,
+        breakfast,
+        pool,
+        imgUrl,
+        id
+    } = req.body
+
+    const address = await Address.save({
+        addressLineOne,
+        addressLineTwo,
+        city,
+        state,
+        postalCode,
+        country,
+    })
+    const lodging = await Lodging.save({
+        name,
+        description,
+        categoryId,
+        wifi,
+        addressId: address.id,
+        userId: id,
+        price,
+        breakfast,
+        pool
+    });
+    const image = await Image.save({
+        imgUrl,
+        lodgingId: lodging.id
+    })
+    res.json({address, lodging, image})
+}));
 
 //TODO Delete lodging
 

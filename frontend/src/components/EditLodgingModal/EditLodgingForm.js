@@ -1,8 +1,8 @@
 import {useState, useEffect} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import {useHistory} from 'react-router-dom'
-import {createLodging} from '../../store/lodgings'
-import './NewLodgingForm.css'
+import {editLodging} from '../../store/lodgings'
+import './NewLodgingFrom.css'
 
 const STATES = [
   'AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL',
@@ -31,11 +31,11 @@ const CATEGORIES = [
 
 ]
 
-function NewLodgingForm({lodgings}) {
+function EditLodgingForm({lodgingId}) {
 
-  const [name, setName] = useState('');
-  const [imgUrl, setImgUrl] = useState('');
-  const [addressLineOne, setAddressLineOne] = useState('')
+  const [name, setName] = useState(name);
+  const [imgUrl, setImgUrl] = useState(imgUrl);
+  const [addressLineOne, setAddressLineOne] = useState(addressLineOne)
   const [addressLineTwo, setAddressLineTwo] = useState('')
   const [city, setCity] = useState('')
   const [state, setState] = useState('')
@@ -94,8 +94,8 @@ function NewLodgingForm({lodgings}) {
       pool,
       imgUrl,
     }
-    dispatch(createLodging(payload))
-    history.push(`/`)
+    dispatch(editLodging(lodgingId, payload))
+    history.push(`/user/lodgings/${user.id}`)
   }
 
   return (
@@ -237,15 +237,15 @@ function NewLodgingForm({lodgings}) {
             ))}
           </ul>
           <button
-            className="create-button"
+            className="update-button"
             type="submit"
             disabled={errors.length > 0}
           >
-            Creat Accommodation
+            Update Accommodation
           </button>
       </div>
     </form>
   );
 }
 
-export default NewLodgingForm;
+export default EditLodgingForm;
