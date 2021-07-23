@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink, Route, useParams } from 'react-router-dom';
-import {getUserLodgings} from '../../store/lodgings';
+import {getUserLodgings, deleteLodging} from '../../store/lodgings';
 import './MyLodgingsPage.css'
 import EditLodgingModal from '../EditLodgingModal';
+import DeleteLodgingModal from '../DeleteLodgingModal';
 
 const MyLodgingsPage = () => {
     const dispatch = useDispatch();
@@ -13,10 +14,6 @@ const MyLodgingsPage = () => {
     useEffect(() => {
         dispatch(getUserLodgings(userId))
     }, [dispatch])
-
-    const handleDelete = lodgingId => {
-        dispatch(deleteLodging(lodging.Id))
-    }
 
 
     return (
@@ -32,7 +29,7 @@ const MyLodgingsPage = () => {
                   </div>
                 </NavLink>
                 <EditLodgingModal lodgingId={lodging.id}/>
-                <button onClick={handleDelete}>Delete</button>
+                <DeleteLodgingModal lodgingId={lodging.id}/>
               </>
           ))}
       </div>

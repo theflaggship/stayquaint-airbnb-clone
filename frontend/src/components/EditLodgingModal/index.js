@@ -8,7 +8,7 @@ function EditLodgingModal({ lodgingId }) {
 
     return (
         <>
-            <button id='edit-lodging-button' onClick={() => setShowModal(true)}>Edit Lodging</button>
+            <button id='update-lodging-button' onClick={() => setShowModal(true)}>Update</button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
                     <EditLodgingForm lodgingId={lodgingId} setShowModal={setShowModal} />

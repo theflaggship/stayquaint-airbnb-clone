@@ -19,7 +19,6 @@ router.get('/', asyncHandler(async (req, res) => {
 // Get single lodging
 
 router.get('/:id', asyncHandler(async (req, res) => {
-    console.log("=====insideroute====")
     const lodging = await Lodging.findByPk(req.params.id,
         {include: [Image, Category, Review, Address]}
     )
@@ -97,9 +96,19 @@ router.get('/user/:userId', asyncHandler(async (req, res) => {
     res.json(lodgings)
 }));
 
-//TODO Edit lodging
+//Edit lodging
 
 router.put('/:id', asyncHandler(async (req, res) => {
+
+    const lodgingId = req.params.id
+    console.log("++++++++++", lodgingId, "+++++++++++++")
+    const lodging = await Lodging.findByPk(lodgingId)
+    const address = await Address.findByPk(lodging.addressId)
+    const image = await Image.findOne({
+        where: {lodgingId}
+    })
+    console.log("++++++++++++", image, "++++++++++++")
+
     const {
         addressLineOne,
         addressLineTwo,
@@ -118,33 +127,35 @@ router.put('/:id', asyncHandler(async (req, res) => {
         id
     } = req.body
 
-    const address = await Address.save({
-        addressLineOne,
-        addressLineTwo,
-        city,
-        state,
-        postalCode,
-        country,
-    })
-    const lodging = await Lodging.save({
-        name,
-        description,
-        categoryId,
-        wifi,
-        addressId: address.id,
-        userId: id,
-        price,
-        breakfast,
-        pool
-    });
-    const image = await Image.save({
-        imgUrl,
-        lodgingId: lodging.id
-    })
-    res.json({address, lodging, image})
+    address.addressLineOne = addressLineOne
+    address.addressLineTwo = addressLineTwo
+    address.city = city
+    address.state = state
+    address.postalCode = postalCode
+    address.country = country
+    lodging.name = name
+    lodging.description = description
+    lodging.categoryId = categoryId
+    lodging.wifi = wifi
+    lodging.price = price
+    lodging.breakfast = breakfast
+    lodging.pool = pool
+    lodging.userId = id
+    image.imgUrl = imgUrl
+    await address.save()
+    await lodging.save()
+    await image.save()
+    res.json(address, lodging, image)
 }));
 
-//TODO Delete lodging
+//Delete lodging
+
+router.delete('/:id', asyncHandler(async (req, res) => {
+    const lodging = await Lodging.findByPk(req.params.id)
+    await lodging.destroy()
+    res.json(lodging)
+}));
+
 
 
 module.exports = router;

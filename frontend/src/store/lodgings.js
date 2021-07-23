@@ -71,6 +71,7 @@ export const editLodging = (lodgingId, payload) => async dispatch => {
   });
   if (response.ok) {
       const lodging = await response.json();
+      console.log("++++++++++", lodging)
       dispatch(editOneLodging(lodgingId));
       return lodging;
   }
