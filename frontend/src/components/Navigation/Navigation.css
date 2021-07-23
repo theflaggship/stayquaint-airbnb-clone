@@ -20,8 +20,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    box-shadow: rgb(35, 35, 35) 0px 0px 4px;
     background-color: #FFFFFF;
+    border-radius: 5px;
+    padding: 15px;
 }
 
 .left-nav {
