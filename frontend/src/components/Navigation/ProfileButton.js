@@ -53,7 +53,9 @@ function ProfileButton({ user, isLoaded }) {
         <div className="menu-addaccommodation-container">
           <NavLink className="add-accommodation-link" to="/lodgings">Add Accommodation</NavLink>
         </div>
-        <button className="logout-button" onClick={logout}>Log Out</button>
+        <div className="menu-logout-container">
+          <button className="logout-button" onClick={logout}>Log Out</button>
+        </div>
       </div>
       );
   } else {
