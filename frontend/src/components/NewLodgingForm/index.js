@@ -95,7 +95,6 @@ function NewLodgingForm({lodgings}) {
       imgUrl,
     }
     dispatch(createLodging(payload))
-    history.push(`/`)
   }
 
   return (

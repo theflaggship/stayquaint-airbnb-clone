@@ -12,7 +12,7 @@ function DeleteLodgingConfirmation({lodgingId, setShowModal}) {
   const handleDelete = (e) => {
     e.preventDefault()
     return dispatch(deleteLodging(lodgingId)).then(() => setShowModal(false))
-      .then(() => history.push(`users/lodgings/${user.id}`))
+    .then(() => history.push('/'))
   }
 
   const handleCancel = (e) => {

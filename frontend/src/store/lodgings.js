@@ -1,4 +1,5 @@
 import { csrfFetch } from './csrf';
+import history from '../history';
 
 const LOAD = 'lodgings/LOAD'
 const ADD_ONE = 'lodgings/ADD_ONE'
@@ -60,8 +61,9 @@ export const createLodging = (payload) => async dispatch => {
   if (response.ok) {
       const lodging = await response.json();
       dispatch(addOneLodging(lodging));
+      history.push(`/`);
       return lodging;
-  }
+    }
 }
 
 export const editLodging = (lodgingId, payload) => async dispatch => {
@@ -106,12 +108,12 @@ const lodgingsReducer = (state = {}, action) => {
       return newState;
     }
     case DELETE_ONE: {
-      const newState = {
-        ...state,
-        [action.lodgingId]: undefined
-      }
+      const newState = {...state}
+      const newLodgings = newState.userLodgings?.filter(lodging => lodging.id !== action.lodgingId)
+      newState.userLodgings = newLodgings
       return newState;
     }
+
     default:
         return state;
   }
