@@ -42,7 +42,7 @@ function EditLodgingForm({lodgingId, setShowModal}) {
   const [addressLineTwo, setAddressLineTwo] = useState(lodging.Address.addressLineTwo)
   const [city, setCity] = useState(lodging.Address.city)
   const [state, setState] = useState(lodging.Address.state)
-  const [postalCode, setPostalCode] = useState(+lodging.Address.postalCode)
+  const [postalCode, setPostalCode] = useState(lodging.Address.postalCode)
   const [country, setCountry] = useState(lodging.Address.country)
   const [description, setDescription] = useState(lodging.description)
   const [price, setPrice] = useState(lodging.price)
@@ -59,7 +59,7 @@ function EditLodgingForm({lodgingId, setShowModal}) {
   useEffect(() => {
     const errors = []
     if (name.length === 0) errors.push("Lodging Name is required")
-    if (name.length > 30) errors.push("Name must be 30 characters or less")
+    if (name.length > 50) errors.push("Name must be 50 characters or less")
     if (imgUrl.length === 0) errors.push("Image URL is required")
     if (addressLineOne.length === 0) errors.push("Address Line 1 is required")
     if (city.length === 0) errors.push("City is required")
@@ -67,7 +67,7 @@ function EditLodgingForm({lodgingId, setShowModal}) {
     if (state.length === 0) errors.push("State is required")
     if (state.length > 2) errors.push("State field must be 2 characters: ie CA for California")
     if (postalCode.length === 0) errors.push("Zip Code is required")
-    if (postalCode.length !== 5) errors.push("Zip field must be 5 digits")
+    // if (postalCode.length !== 5) errors.push("Zip field must be 5 digits")
     if (country.length === 0) errors.push("Country field is required")
     if (country.length > 30) errors.push("Country field must be 30 characters or less")
     if (description.length === 0) errors.push("Description field is required")

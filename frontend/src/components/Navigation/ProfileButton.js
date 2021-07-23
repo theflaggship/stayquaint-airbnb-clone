@@ -53,7 +53,7 @@ function ProfileButton({ user, isLoaded }) {
           <NavLink className="add-accommodation-link" to="/lodgings">Add Accommodation</NavLink>
         </div>
         <div className="menu-logout-container">
-          <button className="logout-button" onClick={logout}>Log Out</button>
+          <NavLink to="/" className="logout-button" onClick={logout}>Log Out</NavLink>
         </div>
       </div>
       );
