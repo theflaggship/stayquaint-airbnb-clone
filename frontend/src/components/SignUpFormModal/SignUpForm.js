@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
-import './SignupForm.css';
+import './SignUpForm.css';
 
-function SignUpForm() {
+function SignUpFormModal() {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
   const [email, setEmail] = useState("");
@@ -74,10 +74,10 @@ function SignUpForm() {
             required
           />
         </div>
-        <button type="submit">Sign Up</button>
+        <button type="submit-button">Sign Up</button>
       </form>
     </div>
   );
 }
 
-export default SignUpForm;
+export default SignUpFormModal;

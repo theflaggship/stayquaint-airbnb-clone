@@ -120,3 +120,7 @@
       padding: 10px;
       border-bottom: rgb(167, 167, 167) 1px solid;
   }
+
+  .login-modal {
+      padding: 40px;
+  }
