@@ -74,6 +74,7 @@ function NewLodgingForm({lodgings}) {
   }, [name, addressLineOne, city, state, postalCode, country, description, price])
 
   const handleSubmit = (e) => {
+
     e.preventDefault()
 
     const payload = {
@@ -94,6 +95,7 @@ function NewLodgingForm({lodgings}) {
       imgUrl,
     }
     dispatch(createLodging(payload))
+    history.push(`/lodgings`)
   }
 
   return (
