@@ -11,9 +11,8 @@ function ProfileButton({ user, isLoaded }) {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
 
-  const openMenu = () => {
-    if (showMenu) return;
-    setShowMenu(true);
+  const handleMenu = () => {
+    setShowMenu(!showMenu);
   };
 
   useEffect(() => {
@@ -23,9 +22,9 @@ function ProfileButton({ user, isLoaded }) {
       setShowMenu(false);
     };
 
-    document.addEventListener('click', closeMenu);
+    // document.addEventListener('click', closeMenu);
 
-    return () => document.removeEventListener("click", closeMenu);
+    // return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
 
   const demoLogin = () => {
@@ -48,7 +47,7 @@ function ProfileButton({ user, isLoaded }) {
           <NavLink className="my-bookings-link" to="/bookings">My Bookings</NavLink>
         </div>
         <div className="menu-myaccommodation-container">
-          <NavLink className="my-accommodations-link" to="/accommodations">My Accommodations</NavLink>
+          <NavLink className="my-accommodations-link" to={`/user/lodgings/${user.id}`}>My Accommodations</NavLink>
         </div>
         <div className="menu-addaccommodation-container">
           <NavLink className="add-accommodation-link" to="/lodgings">Add Accommodation</NavLink>
@@ -61,12 +60,12 @@ function ProfileButton({ user, isLoaded }) {
   } else {
     sessionLinks = (
       <div className="nonuser-menu">
-        <div className="menu-signup-container">
+        {/* <div className="menu-signup-container"> */}
           <SignUpFormModal />
-        </div>
-        <div className="menu-login-container">
+        {/* </div> */}
+        {/* <div className="menu-login-container"> */}
           <LoginFormModal />
-        </div>
+        {/* </div> */}
         <div className="menu-demo-container">
           <button id="menu-demo-button" onClick={demoLogin}>Demo</button>
         </div>
@@ -77,7 +76,7 @@ function ProfileButton({ user, isLoaded }) {
   return (
     <>
       <div>
-        <button className="profile-icon" onClick={openMenu}>
+        <button className="profile-icon" onClick={handleMenu}>
           <i className="fas fa-user-circle" />
         </button>
       </div>

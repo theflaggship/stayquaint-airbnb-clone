@@ -2,15 +2,27 @@ import { csrfFetch } from './csrf';
 
 const LOAD = 'lodgings/LOAD'
 const ADD_ONE = 'lodgings/ADD_ONE'
+const DELETE_ONE = 'lodgings/DELETE_ONE'
+const EDIT_ONE = 'lodgings/EDIT_ONE'
 
 const load = list => ({
   type: LOAD,
   list,
 });
 
-const addLodging = lodging => ({
+const addOneLodging = lodging => ({
   type: ADD_ONE,
   lodging,
+});
+
+const deleteOneLodging = lodgingId => ({
+  type: DELETE_ONE,
+  lodgingId,
+});
+
+const editOneLodging = lodgingId => ({
+  type: EDIT_ONE,
+  lodgingId,
 });
 
 export const getLodgings = () => async dispatch => {
@@ -22,11 +34,21 @@ export const getLodgings = () => async dispatch => {
 };
 
 export const getLodging = (id) => async dispatch => {
-  console.log(id);
   const response = await csrfFetch(`/api/lodgings/${id}`);
   if (response.ok) {
       const lodging = await response.json();
-      dispatch(addLodging(lodging));
+      dispatch(addOneLodging(lodging));
+  }
+};
+
+export const getUserLodgings = (userId) => async dispatch => {
+  console.log(userId)
+  const response = await csrfFetch(`/api/lodgings/user/${userId}`);
+  console.log(response, "response")
+  if (response.ok) {
+    const list = await response.json();
+    console.log(list)
+    dispatch(load(list));
   }
 };
 
@@ -35,10 +57,9 @@ export const createLodging = (payload) => async dispatch => {
       method: 'POST',
       body: JSON.stringify(payload),
   });
-  console.log(response);
   if (response.ok) {
       const lodging = await response.json();
-      dispatch(addLodging(lodging));
+      dispatch(addOneLodging(lodging));
       return lodging;
   }
 }

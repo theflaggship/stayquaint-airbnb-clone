@@ -86,6 +86,18 @@ router.post('/', asyncHandler(async (req, res) => {
     res.json({address, lodging, image})
 }));
 
+// Get lodgings by user
+router.get('/user/:userId', asyncHandler(async (req, res) => {
+    // const user = await User.findByPk(req.params.userId)
+    const lodgings = await Lodging.findAll({
+        where: {
+            userId: req.params.userId
+        },
+        include: [Image, Address, Review, Category]
+    })
+    res.json(lodgings)
+}));
+
 //TODO Edit lodging
 
 //TODO Delete lodging

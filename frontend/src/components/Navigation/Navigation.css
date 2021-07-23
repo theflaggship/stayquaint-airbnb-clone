@@ -25,14 +25,14 @@
 .user-menu {
     z-index: 10001;
     width: 250px;
-    height: 235px;
+    height: 245px;
     padding: 0px;
     margin-top: 3px;
 }
 .nonuser-menu {
     z-index: 10001;
     width: 200px;
-    height: 150px;
+    height: 140px;
     padding: 5px;
     margin-top: 3px;
     margin-bottom: 3px;
@@ -54,7 +54,7 @@
 .menu-bookings-container:hover,
 .menu-myaccommodation-container:hover,
 .menu-logout-container:hover {
-    background-color: #f4f4f4;
+    background-color: rgb(238, 238, 238);
     cursor: pointer;
 }
 
@@ -71,6 +71,12 @@
     font-family: 'Mukta', sans-serif;
     font-size: 16px;
     padding: 0px;
+}
+
+#menu-demo-button:hover
+#menu-login-button:hover,
+#menu-signup-button:hover {
+    cursor: pointer;
 }
 
 .logout-button {
@@ -211,3 +217,5 @@
   .add-accommodation-link {
       font-weight: lighter;
   }
+
+  

@@ -6,13 +6,13 @@ import Navigation from "./components/Navigation";
 import LodgingsBrowser from "./components/LodgingsBrowser";
 import NewLodgingForm from "./components/NewLodgingForm";
 import LodgingPage from "./components/LodgingPage";
+import MyLodgingsPage from './components/MyLodgingsPage';
 
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
-    // dispatch(initSession());
   }, [dispatch]);
 
   return (
@@ -28,6 +28,9 @@ function App() {
           </Route>
           <Route path="/lodgings/:lodgingId">
             <LodgingPage />
+          </Route>
+          <Route path="/user/lodgings/:userId">
+            <MyLodgingsPage />
           </Route>
         </Switch>
       )}
