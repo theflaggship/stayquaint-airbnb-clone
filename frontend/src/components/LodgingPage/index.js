@@ -1,15 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { NavLink, Route, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import {getLodging} from '../../store/lodgings';
 import './LodgingPage.css'
 
 const LodgingPage = () => {
   const dispatch = useDispatch();
-  console.log("==============lodginpage=============")
   const { lodgingId } = useParams()
   const lodging = useSelector(state => state.lodgings[lodgingId]);
-  console.log(lodgingId)
 
   useEffect(() => {
       dispatch(getLodging(lodgingId))

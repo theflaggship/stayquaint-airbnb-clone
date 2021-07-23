@@ -12,19 +12,87 @@
     background-color: #FFFFFF;
 }
 
-.profile-dropdown {
+.nonuser-menu,
+.user-menu{
     position: absolute;
     top: 60px;
     right: 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
     background-color: #FFFFFF;
-    border-radius: 5px;
-    padding: 15px;
-    box-shadow: 0 2px 2px -1px gray;
+    border-radius: 10px;
+    box-shadow: -1px -1px 4px 1px rgba(0, 0, 0, 0.091);
 }
+
+.user-menu {
+    z-index: 10001;
+    width: 250px;
+    height: 250px;
+    padding: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+
+}
+.nonuser-menu {
+    z-index: 10001;
+    width: 200px;
+    height: 150px;
+    padding: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+
+.menu-addaccommodation-container,
+.menu-bookings-container,
+.menu-myaccommodation-container {
+    border-bottom:rgb(205, 205, 205) 1px solid;
+    padding: 10px;
+}
+
+.menu-username-container {
+    border-bottom:rgb(205, 205, 205) 1px solid;
+}
+
+#menu-demo-button,
+#menu-login-button,
+#menu-signup-button,
+.logout-button {
+    background-color: #FFFFFF;
+    border: none;
+    font-family: 'Mukta', sans-serif;
+    font-size: 16px;
+    padding: 0px;
+}
+
+.logout-button {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+#menu-signup-button {
+    font-weight: bolder;
+}
+
+#menu-demo-button:hover,
+#menu-login-button:hover,
+#menu-signup-button:hover {
+    background-color: #f4f4f4;
+    cursor: pointer;
+}
+
+#menu-demo-button,
+#menu-login-button {
+    font-weight: lighter;
+}
+
+.menu-demo-container {
+    padding: 10px
+}
+
+.menu-signup-container,
+.menu-login-container {
+    border-bottom:rgb(205, 205, 205) 1px solid;
+    padding: 10px;
+}
+
 
 .left-nav {
     margin-left: 35px;
@@ -87,18 +155,18 @@
   }
 
   .add-accommodation-link {
-      font-size: 15px;
-      font-family: 'Mukta', sans-serif;
-      margin-right: 7px;
-      color: black;
-      text-decoration: none;
+    font-size: 16px;
+    font-family: 'Mukta', sans-serif;
+    color: #2B4756;
+    text-decoration: underline;
+    margin-left: 10px;
   }
 
   .profile-icon {
-      background-color: #FFFFFF;
-      border: .5px solid rgb(167, 167, 167);
-      padding: 3px 15px 3px 15px;
-      border-radius: 20px;
+    background-color: #FFFFFF;
+    border: .5px solid rgb(167, 167, 167);
+    padding: 3px 15px 3px 15px;
+    border-radius: 20px;
   }
 
   .fa-user-circle {
@@ -106,7 +174,8 @@
   }
 
   .username {
-      color:rgb(125, 125, 125)
+      color:rgb(125, 125, 125);
+      margin-left: 10px;
   }
   .my-bookings-link,
   .my-accommodations-link {
@@ -118,7 +187,6 @@
   .my-accommodations-link,
   .username {
       padding: 10px;
-      border-bottom: rgb(167, 167, 167) 1px solid;
   }
 
   .login-modal {

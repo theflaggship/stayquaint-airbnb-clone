@@ -15,7 +15,7 @@ const LodgingsBrowser = () => {
     return (
       <div className="lodgings-browser">
           {lodgings?.map(lodging => (
-              <NavLink to={`/lodgings/${lodging.id}`}>
+              <NavLink key={lodging.id} to={`/lodgings/${lodging.id}`}>
                 <div className="lodging-container">
                     {lodging.Images !== undefined && (<img className="lodging-img" src={lodging.Images[0].imgUrl}/>)}
                     <p className="lodging-name">{lodging.name}</p>
