@@ -5,34 +5,14 @@ import {deleteLodging} from '../../store/lodgings'
 import './DeleteLodgingConfirmation.css'
 
 function DeleteLodgingConfirmation({lodgingId, setShowModal}) {
-  const user = useSelector(state => state.user)
+  const user = useSelector(state => state.session.user)
   const history = useHistory()
+  const dispatch = useDispatch()
 
   const handleDelete = (e) => {
-
     e.preventDefault()
-
-    const payload = {
-      addressLineOne,
-      addressLineTwo,
-      city,
-      state,
-      postalCode,
-      country,
-      name,
-      id: user.id,
-      description,
-      categoryId,
-      wifi,
-      price,
-      breakfast,
-      pool,
-      imgUrl,
-    }
-
     return dispatch(deleteLodging(lodgingId)).then(() => setShowModal(false))
       .then(() => history.push(`users/lodgings/${user.id}`))
-
   }
 
   const handleCancel = (e) => {
@@ -53,4 +33,4 @@ function DeleteLodgingConfirmation({lodgingId, setShowModal}) {
   );
 }
 
-export default DeleteLodgingForm;
+export default DeleteLodgingConfirmation;

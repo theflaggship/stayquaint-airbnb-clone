@@ -82,7 +82,8 @@ export const deleteLodging = (lodgingId) => async dispatch => {
       method: 'DELETE',
   });
   if (response.ok) {
-      dispatch(deleteOneLodging(lodgingId));
+      const lodging = await response.json();
+      dispatch(deleteOneLodging(lodging?.id));
   }
 };
 
@@ -102,6 +103,13 @@ const lodgingsReducer = (state = {}, action) => {
         [action.lodging.id]: action.lodging
       }
 
+      return newState;
+    }
+    case DELETE_ONE: {
+      const newState = {
+        ...state,
+        [action.lodgingId]: undefined
+      }
       return newState;
     }
     default:

@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Address.associate = function(models) {
     // associations can be defined here
-    Address.hasMany(models.Lodging, {foreignKey: 'addressId'});
+    Address.hasMany(models.Lodging, {foreignKey: 'addressId', onDelete: 'cascade' });
   };
   return Address;
 };

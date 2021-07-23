@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Image.associate = function(models) {
     // associations can be defined here
-    Image.belongsTo(models.Lodging, {foreignKey: 'lodgingId'});
+    Image.belongsTo(models.Lodging, {foreignKey: 'lodgingId', onDelete: 'CASCADE' });
   };
   return Image;
 };

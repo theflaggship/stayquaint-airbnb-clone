@@ -151,9 +151,16 @@ router.put('/:id', asyncHandler(async (req, res) => {
 //Delete lodging
 
 router.delete('/:id', asyncHandler(async (req, res) => {
-    const lodging = await Lodging.findByPk(req.params.id)
+    const lodgingId = req.params.id
+    const lodging = await Lodging.findByPk(lodgingId)
+    const address = await Address.findByPk(lodging.addressId)
+    const image = await Image.findOne({
+        where: {lodgingId}
+    })
+    await image.destroy()
     await lodging.destroy()
-    res.json(lodging)
+    await address.destroy()
+    res.json({message: 'Deleted successfully'})
 }));
 
 

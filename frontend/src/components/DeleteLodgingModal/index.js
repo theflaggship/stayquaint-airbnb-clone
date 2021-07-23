@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import DeleteLodgingConfirmation from './DeleteLodgingModal'
+import DeleteLodgingConfirmation from './DeleteLodgingConfirmation'
 import { Modal } from '../../context/Modal'
 import './DeleteLodgingConfirmation.css'
 
