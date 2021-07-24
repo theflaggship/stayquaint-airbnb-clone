@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Gotu&family=Mukta:wght@200;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap');
+
+
+.lodging-page {
+    margin-top: 80px;
+}
+
+.image-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    overflow-x: scroll;
+    margin-left: 30px;
+}
+.lodging-image {
+    width: 500px;
+    height: 300px;
+    padding: 5px;
+    border-radius: 15px;
+
+}
+
+.ind-lodging-name {
+    font-size: 1.7em;
+    margin-left: 20px;
+    font-family: 'Mukta', serif;
+    font-weight: lighter;
+    margin: 0px;
+    margin-left: 30px;
+}
+
+h4 {
+    font-size: 1em;
+    font-family: 'Roboto', serif;
+    font-weight: lighter;
+    padding: 0px;
+    margin-left: 30px;
+    margin-bottom: 10px;
+    margin-top: 0px;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.0em;
+    font-weight: 300;
+    color: rgb(68, 68, 68)
+}
+
+.description {
+    width: 60%;
+    height: auto;
+    border-top: 1px solid #e5e5e5;
+    margin-left: 30px;
+}
+
+h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    color: rgb(53, 53, 53);
+}

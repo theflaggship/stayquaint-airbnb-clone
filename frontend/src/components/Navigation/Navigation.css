@@ -10,6 +10,7 @@
     justify-content: space-between;
     align-content: space-around;
     background-color: #FFFFFF;
+    box-shadow: 10px -2px 15px 2px rgba(31, 31, 31, 0.25);
 }
 
 .nonuser-menu,
@@ -50,16 +51,21 @@
     border-bottom:rgb(205, 205, 205) 1px solid;
 }
 
+.menu-username-container {
+    margin-top: 5px;
+}
+
+.menu-logout-container {
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
 .menu-addaccommodation-container:hover,
 .menu-bookings-container:hover,
 .menu-myaccommodation-container:hover,
 .menu-logout-container:hover {
     background-color: rgb(238, 238, 238);
     cursor: pointer;
-}
-
-.menu-logout-container:hover {
-    padding-bottom: 7px;
 }
 
 #menu-demo-button,
@@ -111,7 +117,7 @@
 
 
 .left-nav {
-    margin-left: 35px;
+    margin-left: 30px;
 }
 
 .right-nav {
@@ -158,7 +164,7 @@
     border-radius: 20px;
     padding: 3px;
     width: 300px;
-    margin-top: 15px;
+    margin-top: 18px;
     border: .5px solid gray;
 }
 
@@ -166,56 +172,67 @@
     max-width: 20em;
     height: 3em;
     padding: 3px;
-    margin-left: 5px;
+    margin-left: 0px;
     margin-top: 7px;
   }
 
-  .add-accommodation-link {
-    font-size: 16px;
-    font-family: 'Mukta', sans-serif;
-    color: #2B4756;
-    text-decoration: underline;
+.add-accommodation-link {
+  font-size: 16px;
+  font-family: 'Mukta', sans-serif;
+  color: #2B4756;
+  text-decoration: underline;
+  margin-left: 10px;
+}
+
+.profile-icon {
+  background-color: #FFFFFF;
+  border: .5px solid rgb(167, 167, 167);
+  padding: 3px 15px 3px 15px;
+  border-radius: 20px;
+  margin-right: 20px;
+}
+
+.profile-icon:hover {
+  box-shadow: 0px 0px 10px rgba(31, 31, 31, 0.4);
+}
+
+.fa-user-circle {
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.username {
+    color:rgb(125, 125, 125);
     margin-left: 10px;
-  }
+}
 
-  .profile-icon {
-    background-color: #FFFFFF;
-    border: .5px solid rgb(167, 167, 167);
-    padding: 3px 15px 3px 15px;
-    border-radius: 20px;
-  }
+.my-bookings-link,
+.my-accommodations-link {
+    text-decoration: none;
+    color: black;
+}
 
-  .fa-user-circle {
-      font-size: 25px;
-  }
+.my-bookings-link,
+.my-accommodations-link,
+.username {
+    padding: 10px;
+}
 
-  .username {
-      color:rgb(125, 125, 125);
-      margin-left: 10px;
-  }
-  .my-bookings-link,
-  .my-accommodations-link {
-      text-decoration: none;
-      color: black;
-  }
+.login-modal {
+    padding: 40px;
+}
 
-  .my-bookings-link,
-  .my-accommodations-link,
-  .username {
-      padding: 10px;
-  }
+.my-bookings-link,
+.my-accommodations-link,
+.menu-logout-container,
+.username,
+.logout-button,
+.add-accommodation-link {
+    font-weight: lighter;
+}
 
-  .login-modal {
-      padding: 40px;
-  }
-
-  .my-bookings-link,
-  .my-accommodations-link,
-  .menu-logout-container,
-  .username,
-  .logout-button,
-  .add-accommodation-link {
-      font-weight: lighter;
-  }
-
-  
+.logout-button{
+    color: black;
+    margin-top: 15px;
+    width: 100%;
+}

@@ -43,7 +43,7 @@ function Navigation({ isLoaded }){
       <div className="mid-nav">
         <div className="search">
             <form>
-                <input className="searchInput"></input>
+                <input placeHolder="        Start your search" className="searchInput"></input>
             </form>
         </div>
       </div>
