@@ -66,6 +66,7 @@ function NewLodgingForm({lodgings}) {
     if (postalCode.length === 0) errors.push("Zip Code is required")
     if (postalCode.length !== 5) errors.push("Zip field must be 5 digits")
     if (country.length === 0) errors.push("Country field is required")
+    if (categoryId === null) errors.push("Category is required")
     if (country.length > 30) errors.push("Country field must be 30 characters or less")
     if (description.length === 0) errors.push("Description field is required")
     if (description.length > 1000) errors.push("Description field must be 1000 characters or less")

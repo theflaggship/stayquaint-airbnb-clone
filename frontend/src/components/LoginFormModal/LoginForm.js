@@ -29,25 +29,29 @@ function LoginForm() {
           ))}
         </ul>
         <div className="cred-div">
-          <h2>Welcome to stayQuaint</h2>
-          <input
-            className="cred-input"
-            placeHolder="Username or Email"
-            type="text"
-            value={credential}
-            onChange={(e) => setCredential(e.target.value)}
-            required
-          />
-        </div>
-        <div className="password-div">
-          <input
-            className="password-input"
-            placeHolder="Password"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
+          <div className="welcome-title">
+            <h2>Welcome to stayQuaint</h2>
+          </div>
+          <div className="cred-input-container">
+            <input
+              className="cred-input"
+              placeHolder="Username or Email"
+              type="text"
+              value={credential}
+              onChange={(e) => setCredential(e.target.value)}
+              required
+            />
+            </div>
+            <div className="password-div">
+            <input
+              className="password-input"
+              placeHolder="Password"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
         </div>
         <button className="modal-login-button button" type="submit">Log In</button>
       </form>

@@ -4,6 +4,7 @@ import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import './SignUpForm.css';
 
+
 function SignUpFormModal() {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
@@ -74,7 +75,7 @@ function SignUpFormModal() {
             required
           />
         </div>
-        <button type="submit-button">Sign Up</button>
+        <button className="submit-button" type="submit-button">Sign Up</button>
       </form>
     </div>
   );

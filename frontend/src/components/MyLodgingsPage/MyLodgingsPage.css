@@ -7,4 +7,65 @@
     margin-left: 45px;
 }
 
+.lodgings-list {
+    display: flex;
+    flex-direction: row;
+    margin-left: 50px;
+    padding: 20px;
+}
 
+.my-lodging-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 250px;
+    border-bottom: 1px solid #e0e0e0;
+    width: 33%;
+    margin-left: 0px;
+    margin-right: 50px;
+    margin-top: 25px;
+}
+
+.lodging-name-price {
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    margin-left: 10px;
+    align-content: center;
+
+}
+
+.my-lodging-name {
+    font-size: 1.2em;
+    font-weight: 400;
+    margin-top: 5px;
+}
+
+.my-lodging-price {
+    position: absolute;
+    margin-left: 160px;
+    margin-top: 8px;
+}
+
+.my-lodging-address {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin-left: 325px;
+    margin-top: 20px;
+}
+
+.address-title {
+    font-size: 1.1em;
+    font-weight: 300;
+    padding: 3px;
+    margin-top: -10px;
+}
+
+.address-line-one,
+.address-line-two,
+.address-location {
+    font-size: 1.1em;
+    padding: 0px;
+    margin: 0px;
+}

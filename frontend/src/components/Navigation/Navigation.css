@@ -77,6 +77,9 @@
     font-family: 'Mukta', sans-serif;
     font-size: 16px;
     padding: 0px;
+    color: black;
+    padding: 0;
+    margin: 0px;
 }
 
 #menu-demo-button:hover
@@ -115,6 +118,10 @@
     padding: 10px;
 }
 
+#menu-signup-button {
+    margin-left: 25px;
+}
+
 
 .left-nav {
     margin-left: 30px;
@@ -138,6 +145,8 @@
 
 .profile-button {
     background-color: none;
+    z-index: 10001;
+    width: 40px;
 }
 
 .signup-button {
@@ -158,13 +167,14 @@
     border: 1px solid gray;
     border-radius: 20px;
     padding: 5px 15px 5px 15px;
+    color: black;
 }
 
 .searchInput {
     border-radius: 20px;
-    padding: 3px;
+    padding: 7px;
     width: 300px;
-    margin-top: 18px;
+    margin-top: 20px;
     border: .5px solid gray;
 }
 
@@ -186,10 +196,11 @@
 
 .profile-icon {
   background-color: #FFFFFF;
-  border: .5px solid rgb(167, 167, 167);
-  padding: 3px 15px 3px 15px;
+  border: .5px solid rgb(167, 167, 167);;
   border-radius: 20px;
   margin-right: 10px;
+  width: 70px;
+  margin-bottom: 10px;
 }
 
 .profile-icon:hover {
@@ -199,6 +210,7 @@
 .fa-user-circle {
     font-size: 25px;
     cursor: pointer;
+    color: black;
 }
 
 .username {

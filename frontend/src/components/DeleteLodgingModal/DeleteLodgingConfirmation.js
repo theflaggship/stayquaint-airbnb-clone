@@ -23,10 +23,10 @@ function DeleteLodgingConfirmation({lodgingId, setShowModal}) {
   return (
     <div className="delete-confirmation-container">
       <div className="delete-confirmation-message">
-        <p>Are you sure you want to delete this lodging?</p>
+        <p className="confirmation-message">Are you sure you want to delete this lodging?</p>
       </div>
       <div className="delete-confirmation-buttons">
-        <button className="delete-confirmation-button" onClick={handleDelete}>Delete Lodging</button>
+        <button className="delete-confirmation-button" onClick={handleDelete}>Delete</button>
         <button className="cancel-confirmation-button" onClick={handleCancel}>Cancel</button>
       </div>
     </div>

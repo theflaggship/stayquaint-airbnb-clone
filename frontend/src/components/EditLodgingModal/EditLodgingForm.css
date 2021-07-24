@@ -3,3 +3,14 @@
     overflow-y: scroll;
     height: 500px;
 }
+
+.update-button {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+}
+
+.update-title {
+    margin-top: 20px;
+    margin-left: 150px;
+}

@@ -1,0 +1,22 @@
+
+
+.delete-confirmation-container {
+    padding: 20px;
+}
+
+.delete-confirmation-buttons {
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+.delete-confirmation-button,
+.cancel-confirmation-button {
+    margin-left: 30px;
+    margin-top: -20px;
+}
+
+.confirmation-message {
+    font-size: 1.2em;
+    font-weight: 400;
+    margin-bottom: 0px;
+}

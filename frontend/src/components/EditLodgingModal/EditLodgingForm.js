@@ -110,7 +110,7 @@ function EditLodgingForm({lodgingId, setShowModal}) {
           className="edit-lodging-form"
           onSubmit={handleSubmit}
         >
-          <h2>Update {lodging.name}</h2>
+          <h2 className="update-title">Update {lodging.name}</h2>
           <div className="form-group">
             <input
               placeHolder="Lodging Name"
