@@ -9,6 +9,7 @@
   flex-direction: column;
   background-color: #FFFFFF;
   padding: 25px;
+  z-index: 30000;
 }
 
 .email-div,

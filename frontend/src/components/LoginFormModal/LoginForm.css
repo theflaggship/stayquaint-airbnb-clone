@@ -11,13 +11,14 @@ h2 {
 }
 
 .login-container {
-    width: 400px;
-    display: flex;
-    flex-direction: column;
-    background-color: #FFFFFF;
-    padding: 25px;
-    border: 1px solid rgb(167, 167, 167);
-    padding-top: 100px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  padding: 25px;
+  border: 1px solid rgb(167, 167, 167);
+  padding-top: 100px;
+  z-index: 30000;
 }
 
 .cred-div,

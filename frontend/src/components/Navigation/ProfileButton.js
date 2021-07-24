@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom'
+import { NavLink, useHistory } from 'react-router-dom'
 import * as sessionActions from '../../store/session';
 import LoginFormModal from '../LoginFormModal';
 import SignUpFormModal from '../SignUpFormModal';
@@ -10,6 +10,7 @@ function ProfileButton({ user, isLoaded }) {
   const sessionUser = useSelector(state => state.session.user);
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
+  const history = useHistory()
 
   const handleMenu = () => {
     setShowMenu(!showMenu);
@@ -18,14 +19,15 @@ function ProfileButton({ user, isLoaded }) {
   useEffect(() => {
     if (!showMenu) return;
 
-    const closeMenu = () => {
-      setShowMenu(false);
-    };
-
     // document.addEventListener('click', closeMenu);
 
     // return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
+
+  const closeMenu = () => {
+    setShowMenu(false);
+  };
+
 
   const demoLogin = () => {
     return dispatch(sessionActions.login({ credential: 'Demo', password: 'password' }))
@@ -33,7 +35,8 @@ function ProfileButton({ user, isLoaded }) {
 
   const logout = (e) => {
     e.preventDefault();
-    dispatch(sessionActions.logout());
+    dispatch(sessionActions.logout(history))
+
   };
 
   let sessionLinks
@@ -74,7 +77,10 @@ function ProfileButton({ user, isLoaded }) {
   }
 
   return (
-    <>
+    <div className="profile-button">
+      {showMenu && (
+      <div className="transparent" onClick={closeMenu}/>
+      )}
       <div>
         <button className="profile-icon" onClick={handleMenu}>
           <i className="fas fa-user-circle" />
@@ -87,7 +93,7 @@ function ProfileButton({ user, isLoaded }) {
           </ul>
         </div>
       )}
-    </>
+    </div>
   );
 }
 
