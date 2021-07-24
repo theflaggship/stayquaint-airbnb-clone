@@ -7,24 +7,4 @@
     margin-left: 45px;
 }
 
-.my-lodging-container {
-    margin-top: 20px;
-    margin-left: 10px;
-    display: flex;
-    flex-direction: row;
-    border-bottom: 1px solid #e0e0e0;
-}
 
-.my-lodging-name {
-    font-family: 'Mukta', sans-serif;
-    font-size: 1.1em;
-}
-
-.my-lodging-price {
-    font-family: 'Mukta', sans-serif;
-}
-
-.lodging-name-price {
-    display: flex;
-    flex-direction: row;
-}

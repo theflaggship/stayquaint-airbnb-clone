@@ -28,6 +28,9 @@ const MyLodgingsPage = () => {
                       <p className="my-lodging-price">${lodging?.price} / night</p>
                   </div>
                 </NavLink>
+                <p>{lodging.Address.addressLineOne}</p>
+                <p>{lodging.Address.addressLineTwp}</p>
+                <p>{lodging.Address.city}, {lodging.Address.state} {lodging.Address.zip}</p>
                 <EditLodgingModal lodgingId={lodging?.id}/>
                 <DeleteLodgingModal lodgingId={lodging?.id}/>
               </div>

@@ -1,12 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Gotu&family=Mukta:wght@200;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap');
+
+
+
 .signup-container {
-    display: flex;
-    flex-direction: column;
-    background-color: #FFFFFF;
-    margin-left: 100px;
-    margin-right: 100px;
-    margin-top: 100px;
-    padding: 25px;
-    border: 1px solid gray;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  padding: 25px;
+  border: 1px solid rgb(167, 167, 167);
 }
 
 .email-div,
@@ -26,4 +29,16 @@
   flex-direction: column;
   font-size: large;
   font-family: "Poppins", sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.signup-title {
+  padding: 0px;
+  font-family: 'Mukta', sans-serif;
+  font-weight: lighter;
+  font-size: 1.2em;
+  margin-left: auto;
+  margin-right: auto;
+
 }
