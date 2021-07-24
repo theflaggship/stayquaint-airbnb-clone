@@ -43,14 +43,16 @@ p {
     font-family: 'Roboto', sans-serif;
     font-size: 1.0em;
     font-weight: 300;
-    color: rgb(68, 68, 68)
+    color: rgb(68, 68, 68);
+    padding-bottom: 60px;
 }
 
 .description {
-    width: 60%;
+    width: 50%;
     height: auto;
     border-top: 1px solid #e5e5e5;
     margin-left: 30px;
+    margin-bottom: 50px;
 }
 
 h2 {

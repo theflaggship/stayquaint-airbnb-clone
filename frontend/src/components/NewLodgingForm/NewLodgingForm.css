@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Gotu&family=Mukta:wght@200;300;400;500&display=swap');
 
-
+.new-lodging-page {
+    margin-top: 90px;
+}
 .new-lodging-form,
 .form-group {
     display: flex;
@@ -19,8 +21,8 @@ input,
 select,
 textarea {
     width: 100%;
-    padding: 10px;
-    margin: 10px;
+    padding: 5px;
+    margin: 5px;
     font-family: 'Mukta', sans-serif;
     font-size: 16px;
 }
@@ -70,6 +72,12 @@ textarea {
 .errors {
     font-family: 'Mukta', sans-serif;
     color: rgb(137, 39, 17);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.add-accommodation-title {
+    font-family: 'Mukta', sans-serif;
     margin-left: auto;
     margin-right: auto;
 }

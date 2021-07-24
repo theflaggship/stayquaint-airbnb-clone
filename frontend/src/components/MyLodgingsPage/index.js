@@ -22,8 +22,8 @@ const MyLodgingsPage = () => {
              {userLodgings?.map(lodging => (
               <div className="my-lodging-container">
                 <NavLink key={lodging?.id} to={`/lodgings/${lodging?.id}`}>
-                  <div>
                       {lodging?.Images !== undefined && (<img className="lodging-img" src={lodging?.Images[0].imgUrl}/>)}
+                  <div className="lodging-name-price">
                       <p className="my-lodging-name">{lodging?.name}</p>
                       <p className="my-lodging-price">${lodging?.price} / night</p>
                   </div>

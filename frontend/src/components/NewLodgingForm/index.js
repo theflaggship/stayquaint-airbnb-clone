@@ -98,152 +98,154 @@ function NewLodgingForm({lodgings}) {
   }
 
   return (
-    <form
-      className="new-lodging-form"
-      onSubmit={handleSubmit}
-    >
-      <h2>Add Accommodation</h2>
-      <div className="form-group">
-        <input
-          placeHolder="Lodging Name"
-          type="text"
-          name="name"
-          value={name}
-          onChange={(event) => setName(event.target.value)}
-        />
-        <input
-          placeHolder="Image URL .png or .jpg"
-          type="text"
-          name="imgUrl"
-          value={imgUrl}
-          onChange={(event) => setImgUrl(event.target.value)}
-        />
-        <input
-          placeHolder="Address Line 1"
-          type="text"
-          name="addressLineOne"
-          value={addressLineOne}
-          onChange={(event) => setAddressLineOne(event.target.value)}
-        />
-        <input
-          placeHolder="Address Line 2"
-          type="text"
-          name="addressLineTwo"
-          value={addressLineTwo}
-          onChange={(event) => setAddressLineTwo(event.target.value)}
-        />
-        <input
-          placeHolder="City"
-          type="text"
-          name="city"
-          value={city}
-          onChange={(event) => setCity(event.target.value)}
-        />
-        <select
-          placeHolder="Select State"
-          value={state}
-          onChange={(event) => setState(event.target.value)}
-        >
-          <option value="" disabled selected>Select a State</option>
-          {STATES.map(state => (
-            <option
-              key={state}
-            >
-              {state}
-            </option>
-          ))}
-        </select>
-        <input
-          placeHolder="Zip Code"
-          type="text"
-          name="postalCode"
-          value={postalCode}
-          onChange={(event) => setPostalCode(event.target.value)}
-        />
-        <input
-          placeHolder="Country"
-          type="text"
-          name="country"
-          value={country}
-          onChange={(event) => setCountry(event.target.value)}
-        />
-        <select
-          placeHolder="Select Category"
-          value={categoryId}
-          onChange={(event) => setCategoryId(event.target.value)}
-        >
-          <option value="" disabled selected>Select a Category</option>
-          {CATEGORIES.map(category => (
-            <option
-              key={category.id}
-              value={category.id}
-            >
-              {category.type}
-            </option>
-          ))}
-        </select>
-          <div className="checkbox-group">
-            <label className="wifi-label">
-              Free Wifi:
-              <input
-                className="wifi-checkbox"
-                type="checkbox"
-                name="wifi"
-                value={wifi}
-                onChange={(event) => setWifi(event.target.checked)}
-              />
-            </label>
-            <label className="pool-label">
-              Pool:
-              <input
-                className="pool-checkbox"
-                type="checkbox"
-                name="pool"
-                value={pool}
-                onChange={(event) => setPool(event.target.checked)}
-              />
-            </label>
-            <label className="breakfast-label">
-                Free Breakfast:
-                <input
-                  className="breakfast-checkbox"
-                  type="checkbox"
-                  name="breakfast"
-                  value={breakfast}
-                  onChange={(event) => setBreakfast(event.target.checked)}
-                />
-              </label>
-          </div>
-          <textarea
-            className="lodging-description"
-            placeHolder="Description"
-            name="description"
-            value={description}
-            onChange={(event) => setDescription(event.target.value)}
+    <div className="new-lodging-page">
+      <form
+        className="new-lodging-form"
+        onSubmit={handleSubmit}
+      >
+        <h2 className="add-accommodation-title">Add Accommodation</h2>
+        <div className="form-group">
+          <input
+            placeHolder="Lodging Name"
+            type="text"
+            name="name"
+            value={name}
+            onChange={(event) => setName(event.target.value)}
           />
           <input
-            placeHolder="Price per night"
+            placeHolder="Image URL .png or .jpg"
             type="text"
-            name="price"
-            value={price}
-            onChange={(event) => setPrice(event.target.value)}
+            name="imgUrl"
+            value={imgUrl}
+            onChange={(event) => setImgUrl(event.target.value)}
           />
-          <ul className="errors">
-            {errors.map(error => (
-            <li key={error}>
-            *** {error}
-            </li>
-            ))}
-          </ul>
-          <button
-            className="create-button"
-            type="submit"
-            disabled={errors.length > 0}
+          <input
+            placeHolder="Address Line 1"
+            type="text"
+            name="addressLineOne"
+            value={addressLineOne}
+            onChange={(event) => setAddressLineOne(event.target.value)}
+          />
+          <input
+            placeHolder="Address Line 2"
+            type="text"
+            name="addressLineTwo"
+            value={addressLineTwo}
+            onChange={(event) => setAddressLineTwo(event.target.value)}
+          />
+          <input
+            placeHolder="City"
+            type="text"
+            name="city"
+            value={city}
+            onChange={(event) => setCity(event.target.value)}
+          />
+          <select
+            placeHolder="Select State"
+            value={state}
+            onChange={(event) => setState(event.target.value)}
           >
-            Creat Accommodation
-          </button>
-      </div>
-    </form>
+            <option value="" disabled selected>Select a State</option>
+            {STATES.map(state => (
+              <option
+                key={state}
+              >
+                {state}
+              </option>
+            ))}
+          </select>
+          <input
+            placeHolder="Zip Code"
+            type="text"
+            name="postalCode"
+            value={postalCode}
+            onChange={(event) => setPostalCode(event.target.value)}
+          />
+          <input
+            placeHolder="Country"
+            type="text"
+            name="country"
+            value={country}
+            onChange={(event) => setCountry(event.target.value)}
+          />
+          <select
+            placeHolder="Select Category"
+            value={categoryId}
+            onChange={(event) => setCategoryId(event.target.value)}
+          >
+            <option value="" disabled selected>Select a Category</option>
+            {CATEGORIES.map(category => (
+              <option
+                key={category.id}
+                value={category.id}
+              >
+                {category.type}
+              </option>
+            ))}
+          </select>
+            <div className="checkbox-group">
+              <label className="wifi-label">
+                Free Wifi:
+                <input
+                  className="wifi-checkbox"
+                  type="checkbox"
+                  name="wifi"
+                  value={wifi}
+                  onChange={(event) => setWifi(event.target.checked)}
+                />
+              </label>
+              <label className="pool-label">
+                Pool:
+                <input
+                  className="pool-checkbox"
+                  type="checkbox"
+                  name="pool"
+                  value={pool}
+                  onChange={(event) => setPool(event.target.checked)}
+                />
+              </label>
+              <label className="breakfast-label">
+                  Free Breakfast:
+                  <input
+                    className="breakfast-checkbox"
+                    type="checkbox"
+                    name="breakfast"
+                    value={breakfast}
+                    onChange={(event) => setBreakfast(event.target.checked)}
+                  />
+                </label>
+            </div>
+            <textarea
+              className="lodging-description"
+              placeHolder="Description"
+              name="description"
+              value={description}
+              onChange={(event) => setDescription(event.target.value)}
+            />
+            <input
+              placeHolder="Price per night"
+              type="text"
+              name="price"
+              value={price}
+              onChange={(event) => setPrice(event.target.value)}
+            />
+            <ul className="errors">
+              {errors.map(error => (
+              <li key={error}>
+              *** {error}
+              </li>
+              ))}
+            </ul>
+            <button
+              className="create-button"
+              type="submit"
+              disabled={errors.length > 0}
+            >
+              Creat Accommodation
+            </button>
+        </div>
+      </form>
+    </div>
   );
 }
 
