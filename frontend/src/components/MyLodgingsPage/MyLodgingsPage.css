@@ -1,0 +1,10 @@
+.my-lodgings-browser {
+    margin-top: 90px;
+    margin-left: 45px;
+}
+
+.my-lodging-container {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #e0e0e0;
+}

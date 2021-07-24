@@ -20,9 +20,9 @@ const MyLodgingsPage = () => {
          <div className="my-lodgings-browser">
             <h2>My Lodgings</h2>
              {userLodgings?.map(lodging => (
-              <>
+              <div className="my-lodging-container">
                 <NavLink key={lodging?.id} to={`/lodgings/${lodging?.id}`}>
-                  <div className="my-lodging-container">
+                  <div>
                       {lodging?.Images !== undefined && (<img className="lodging-img" src={lodging?.Images[0].imgUrl}/>)}
                       <p className="my-lodging-name">{lodging?.name}</p>
                       <p className="my-lodging-price">${lodging?.price} / night</p>
@@ -30,7 +30,7 @@ const MyLodgingsPage = () => {
                 </NavLink>
                 <EditLodgingModal lodgingId={lodging?.id}/>
                 <DeleteLodgingModal lodgingId={lodging?.id}/>
-              </>
+              </div>
           ))}
       </div>
     )
