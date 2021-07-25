@@ -10,11 +10,10 @@ const router = express.Router();
 // GET /api/bookings
 
 router.get('/users/:userId', asyncHandler(async (req, res) => {
+    const { userId } = req.params;
     const bookings = await Booking.findAll({
-        where: {
-            userId: req.params.userId
-        },
-        include: [Lodging]
+        where: { userId },
+        include: [User, Lodging]
     });
     res.json(bookings);
 }));
@@ -42,6 +41,16 @@ router.post('/', asyncHandler(async (req, res) => {
 }));
 
 // PUT /api/bookings/:id
+
+// DELETE /api/bookings/:id
+
+router.delete('/:bookingId', asyncHandler(async (req, res) => {
+    const { bookingId } = req.params
+    const booking = await Booking.findByPk(bookingId)
+    await booking.destroy()
+    res.json({message: 'Deleted successfully'})
+}));
+
 
 
 

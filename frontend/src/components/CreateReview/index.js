@@ -19,7 +19,7 @@ const CreateReview = () => {
 
 
   const errors = [];
-    if (rating === null) errors.push('Rating is required');
+    if (rating == 0) errors.push('Rating is required');
     if (comment.length === 0) errors.push('Review is required');
 
   const handleSubmit = (e) => {
@@ -52,12 +52,10 @@ const CreateReview = () => {
           onChange={(event) => setComment(event.target.value)}
         />
         <select
-          placeHolder="Rating"
           className="review-rating-select"
            value={rating}
            onChange={(event) => setRating(event.target.value)}
-        >
-          <option disabled>Rating</option>
+        > <option value="0">Rating</option>
           {RATINGS.map((rating) => (
               <option
                 key={rating}

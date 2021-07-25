@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import {getLodging} from '../../store/lodgings';
-import { createReview } from '../../store/reviews';
+import { createReview, getLodgingReviews } from '../../store/reviews';
 import Review from '../Review/Review';
 import CreateReview from '../CreateReview';
 import CreateBooking from '../CreateBooking'
@@ -13,9 +13,14 @@ const LodgingPage = () => {
   const { lodgingId } = useParams()
   const lodging = useSelector(state => state.lodgings[lodgingId]);
   const reviews = useSelector(state => state.reviews);
+  const reviewsCopy = []
+  reviews?.forEach(review => reviewsCopy.push(review))
+
+  const orderedReviews = reviewsCopy?.sort((a, b) => (a.createdAt < b.createdAt) ? 1 : -1)
 
   useEffect(() => {
       dispatch(getLodging(lodgingId))
+      dispatch(getLodgingReviews(lodgingId))
   }, [dispatch])
 
   let breakfast
@@ -36,7 +41,7 @@ const LodgingPage = () => {
   return (
     <div className="lodging-page">
       <div className="lodging-page-header">
-        <div className="loding-name-address">
+        <div className="lodging-name-address">
           <h1 className="ind-lodging-name">{lodging?.name}</h1>
           <h4>{lodging?.Address.city}, {lodging?.Address.state}, {lodging?.Address.country}</h4>
         </div>
@@ -62,8 +67,9 @@ const LodgingPage = () => {
           <CreateReview />
         </div>
       </div>
-      <div className="reviews">
-        {reviews.map(review => (
+      <div className="reviews-container">
+        <h2 className="reviews-title">Reviews</h2>
+        {orderedReviews.map(review => (
         <Review review= {review}/>
         ))}
       </div>
@@ -72,3 +78,8 @@ const LodgingPage = () => {
 }
 
 export default LodgingPage;
+
+
+// {(comment?.User?.id === sessionUser?.id) ?
+//   <button className='episode-page-comment-delete' onClick={() => deleteOneComment(comment?.id)}>Delete</button>
+//   : null}

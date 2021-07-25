@@ -44,7 +44,7 @@ const CreateBooking = () => {
           }
           dispatch(createBooking(payload))
           .then(() => {
-            history.push('/bookings')
+            history.push(`/bookings/users/${user.id}`)
           })
       }
 

@@ -7,10 +7,10 @@
     padding: 20px;
     width: 76%;
     font-family: 'Roboto', sans-serif;
+    margin-left: 20px;
 }
 
 .create-review-form {
-    margin-left: 0;
     margin-left: 35px;
     padding: 0;
 }

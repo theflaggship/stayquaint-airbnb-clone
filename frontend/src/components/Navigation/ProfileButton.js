@@ -47,7 +47,7 @@ function ProfileButton({ user, isLoaded }) {
           <li className="username">{user.username}</li>
         </div>
         <div className="menu-bookings-container">
-          <NavLink className="my-bookings-link" to={`/mybookings/${user.id}`}>My Bookings</NavLink>
+          <NavLink className="my-bookings-link" to={`/bookings/users/${user.id}`}>My Bookings</NavLink>
         </div>
         <div className="menu-myaccommodation-container">
           <NavLink className="my-accommodations-link" to={`/user/lodgings/${user.id}`}>My Accommodations</NavLink>

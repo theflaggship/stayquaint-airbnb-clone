@@ -33,7 +33,7 @@ function App() {
           <Route path="/user/lodgings/:userId">
             <MyLodgingsPage />
           </Route>
-          <Route path="/mybookings/:userId">
+          <Route path="/bookings/users/:userId">
             <MyBookingsPage />
           </Route>
         </Switch>

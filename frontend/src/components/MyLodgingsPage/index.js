@@ -38,7 +38,7 @@ const MyLodgingsPage = () => {
                            <EditLodgingModal lodgingId={lodging?.id}/>
                           </div>
                           <div className="my-lodging-delete-modal">
-                              <DeleteLodgingModal lodgingId={lodging?.id}/>
+                            <DeleteLodgingModal lodgingId={lodging?.id}/>
                           </div>
                       </div>
                   </div>

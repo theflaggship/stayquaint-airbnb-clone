@@ -28,8 +28,30 @@ router.post('/', asyncHandler(async (req, res) => {
     res.json(review)
 }));
 
+// Get lodging reviews
+
+router.get('/lodgings/:lodgingId', asyncHandler(async (req, res) => {
+    const { lodgingId } = req.params
+    const reviews = await Review.findAll({
+        where: { lodgingId },
+        include: [User, Lodging]
+    })
+    res.json(reviews)
+}));
+
+
+
 // Edit a review
 
 // Delete a review
+
+router.delete('/:reviewId', asyncHandler(async (req, res) => {
+    const { reviewId } = req.params
+    const review = await Review.findByPk(reviewId)
+    await review.destroy()
+    res.json({message: 'Review deleted'})
+}));
+
+
 
 module.exports = router;
