@@ -7,6 +7,7 @@ import LodgingsBrowser from "./components/LodgingsBrowser";
 import NewLodgingForm from "./components/NewLodgingForm";
 import LodgingPage from "./components/LodgingPage";
 import MyLodgingsPage from './components/MyLodgingsPage';
+import MyBookingsPage from './components/MyBookingsPage';
 
 function App() {
   const dispatch = useDispatch();
@@ -31,6 +32,9 @@ function App() {
           </Route>
           <Route path="/user/lodgings/:userId">
             <MyLodgingsPage />
+          </Route>
+          <Route path="/mybookings/:userId">
+            <MyBookingsPage />
           </Route>
         </Switch>
       )}

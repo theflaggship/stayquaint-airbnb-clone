@@ -9,6 +9,16 @@ const router = express.Router();
 
 // GET /api/bookings
 
+router.get('/users/:userId', asyncHandler(async (req, res) => {
+    const bookings = await Booking.findAll({
+        where: {
+            userId: req.params.userId
+        },
+        include: [Lodging]
+    });
+    res.json(bookings);
+}));
+
 
 // GET /api/bookings/:id
 

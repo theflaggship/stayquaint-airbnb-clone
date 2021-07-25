@@ -1,6 +1,6 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
-import {useParams} from 'react-router-dom';
+import {useParams, useHistory} from 'react-router-dom';
 import {useSelector, useDispatch} from 'react-redux';
 import {createBooking} from '../../store/bookings';
 import './CreateBooking.css';
@@ -13,6 +13,7 @@ const CreateBooking = () => {
     const user = useSelector(state => state.session.user)
     const { lodgingId } = useParams()
     const dispatch = useDispatch();
+    const history = useHistory();
     const lodging = useSelector(state => state.lodgings[lodgingId]);
 
     const errors = []
@@ -43,7 +44,7 @@ const CreateBooking = () => {
           }
           dispatch(createBooking(payload))
           .then(() => {
-              window.location.href = '/bookings'
+            history.push('/bookings')
           })
       }
 
