@@ -20,12 +20,12 @@ View live: <a href='https://stayquaint.herokuapp.com/'>StayQuaint</a>
 
 ## Home/Lodgings Page:
 
-<img src="" width='500px' />
+<img src="https://i.imgur.com/WW6ZAxt.png" width='500px' />
 <br />
 
 ## Individual Lodging Page:
 
-<img src="" width='500px' />
+<img src="https://i.imgur.com/yVNVzK9.png" width='500px' />
 <br />
 
 
