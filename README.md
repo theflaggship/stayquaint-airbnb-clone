@@ -1,5 +1,5 @@
 <p align='center'>
-  <img src='https://i.imgur.com/LOv8ujp.png' width='200px' >
+  <img src='https://i.imgur.com/LOv8ujp.png' width='400px' >
 </p>
 
 # StayQuaint
