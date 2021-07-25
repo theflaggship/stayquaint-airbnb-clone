@@ -15,7 +15,11 @@
     width: 120px;
     font-size: 12px;
     border-radius: 8px;
+    cursor: pointer;
 }
+@import url('https://fonts.googleapis.com/css2?family=Gotu&family=Mukta:wght@200;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap');
+
 
 .create-booking-price {
     font-size: 1.5em;
@@ -29,8 +33,18 @@
 }
 
 .create-booking-button {
-    font-weight: 100;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
     padding-right: 5px;
     margin-right: 15px;
     margin-left: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.create-booking-button:disabled {
+    background-color: gray;
+    color: rgb(198, 198, 198);
+    cursor: unset;
 }

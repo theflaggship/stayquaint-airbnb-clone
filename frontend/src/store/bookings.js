@@ -41,15 +41,10 @@ export const getUserBookings = (userId) => async dispatch => {
     }
 }
 
-const bookingsReducer = (state = {}, action) => {
+const bookingsReducer = (state = [], action) => {
     switch (action.type) {
-        case LOAD: {
-            const newState = {}
-            action.list.forEach(booking => {
-                newState[booking.id] = booking;
-            });
-            return newState;
-        }
+        case LOAD:
+            return [...state, ...action.list];
         case ADD_ONE:
             return [...state, action.booking];
 

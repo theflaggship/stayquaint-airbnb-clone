@@ -52,12 +52,17 @@ const LodgingPage = () => {
           {wifi}
           {pool}
       </div>
-      <div className="description">
-        <h2>About {lodging?.name}</h2>
-        <p className="lodging-description">{lodging?.description}</p>
+      <div className="description-review-container">
+        <div className="description">
+          <h2>About {lodging?.name}</h2>
+          <p className="lodging-description">{lodging?.description}</p>
+        </div>
+        <div className="page-create-review-container">
+          <p className="create-review-header">Leave a Review</p>
+          <CreateReview />
+        </div>
       </div>
       <div className="reviews">
-        <CreateReview />
         {reviews.map(review => (
         <Review review= {review}/>
         ))}

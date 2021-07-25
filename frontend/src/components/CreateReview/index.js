@@ -3,6 +3,7 @@ import {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 import {useSelector, useDispatch} from 'react-redux';
 import {createReview} from '../../store/reviews';
+import './CreateReview.css';
 
 const RATINGS = [1, 2, 3, 4, 5];
 
@@ -43,11 +44,20 @@ const CreateReview = () => {
         className="create-review-form"
         onSubmit={handleSubmit}
       >
+
+        <textarea
+          className="write-comment-textarea"
+          placeholder="Write a comment"
+          value={comment}
+          onChange={(event) => setComment(event.target.value)}
+        />
         <select
+          placeHolder="Rating"
+          className="review-rating-select"
            value={rating}
            onChange={(event) => setRating(event.target.value)}
         >
-          <option value="" disabled>Select a rating</option>
+          <option disabled>Rating</option>
           {RATINGS.map((rating) => (
               <option
                 key={rating}
@@ -56,11 +66,6 @@ const CreateReview = () => {
             </option>
           ))}
         </select>
-        <textarea
-          placeholder="Write a review"
-          value={comment}
-          onChange={(event) => setComment(event.target.value)}
-        />
         <button
           className="create-review-button"
           type="submit"

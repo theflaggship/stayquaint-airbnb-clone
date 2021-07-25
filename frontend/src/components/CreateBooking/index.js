@@ -72,6 +72,7 @@ const CreateBooking = () => {
               <button
                 type="submit"
                 className="create-booking-button"
+                disabled={errors.length > 0}
               >
                 Book Now
               </button>

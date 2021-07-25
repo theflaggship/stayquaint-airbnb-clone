@@ -7,7 +7,7 @@ import './MyBookingsPage.css'
 const MyBookingsPage = () => {
     const dispatch = useDispatch();
     const { userId } = useParams();
-    const userBookings = useSelector(state => Object.values(state.bookings));
+    const userBookings = useSelector(state => state.list);
     console.log("==========", userBookings)
     const userLodgings = useSelector(state => Object.values(state.lodgings));
 
@@ -24,11 +24,11 @@ const MyBookingsPage = () => {
                 <h2 className="my-booking">My Bookings</h2>
                 {userBookings?.map(booking => (
                     <div className="my-bookings-container">
-                        <h2>{booking.dateStart}</h2>
-                        <h2>{booking.dateStart}</h2>
-                        <h2>{booking.dateStart}</h2>
-                        <h2>{booking.dateStart}</h2>
-                        <h2>{booking.dateStart}</h2>
+                        <h2>{booking?.dateStart}</h2>
+                        <h2>{booking?.dateStart}</h2>
+                        <h2>{booking?.dateStart}</h2>
+                        <h2>{booking?.dateStart}</h2>
+                        <h2>{booking?.dateStart}</h2>
                     </div>
                      ))}
         </div>
