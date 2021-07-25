@@ -7,32 +7,29 @@ const { check, validationResult } = require('express-validator');
 const { response } = require('express');
 const router = express.Router();
 
-// GET /api/bookings
+// Get all reviews
 
-
-// GET /api/bookings/:id
-
-// POST /api/bookings
+// Create a review
 
 router.post('/', asyncHandler(async (req, res) => {
     const {
+        rating,
+        comment,
         lodgingId,
-        userId,
-        dateStart,
-        dateEnd
+        userId
     } = req.body
 
-    const booking = await Booking.create({
+    const review = await Review.create({
         userId,
         lodgingId,
-        dateStart,
-        dateEnd
+        rating,
+        comment
     })
-    res.json({booking})
+    res.json(review)
 }));
 
-// PUT /api/bookings/:id
+// Edit a review
 
-
+// Delete a review
 
 module.exports = router;

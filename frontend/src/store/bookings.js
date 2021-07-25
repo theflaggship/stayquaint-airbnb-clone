@@ -24,3 +24,14 @@ export const createBooking = (payload) => async dispatch => {
         return booking
     }
 }
+
+const bookingsReducer = (state = [], action) => {
+    switch (action.type) {
+        case ADD_ONE:
+            return [...state, action.booking];
+        default:
+            return state;
+    }
+}
+
+export default bookingsReducer
