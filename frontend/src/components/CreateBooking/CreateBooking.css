@@ -1,0 +1,28 @@
+.create-booking-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 30px;
+    border: 1px solid #e5e5e5;
+    padding: 5px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+#date-start,
+#date-end {
+    width: 120px;
+    font-size: 12px;
+    border-radius: 8px;
+}
+
+.create-booking-price {
+    font-size: 1.5em;
+    font-weight: 400;
+    margin: 0px;
+    margin-top: 15px;
+    padding: 0px;
+    padding-bottom: 5px;
+    margin-right: 20px;
+    margin-left: 10px;
+}

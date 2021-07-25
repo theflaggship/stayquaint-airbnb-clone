@@ -3,6 +3,7 @@ import {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 import {useSelector, useDispatch} from 'react-redux';
 import {createBooking} from '../../store/bookings';
+import './CreateBooking.css';
 
 
 const CreateBooking = () => {
@@ -12,6 +13,7 @@ const CreateBooking = () => {
     const user = useSelector(state => state.session.user)
     const { lodgingId } = useParams()
     const dispatch = useDispatch();
+    const lodging = useSelector(state => state.lodgings[lodgingId]);
 
     const errors = []
       if (dateStart > dateEnd) {
@@ -48,19 +50,21 @@ const CreateBooking = () => {
 
     return (
         <div className="create-booking-container">
+            <p className="create-booking-price">${lodging?.price} / night</p>
             <form
               className="create-booking-form"
               onSubmit={handleSubmit}
             >
               <input
+              placeHolder="Start"
               type="date"
-              className="date-start"
+              id="date-start"
               value={dateStart}
               onChange={(e) => setDateStart(e.target.value)}
               />
               <input
               type="date"
-              className="date-end"
+              id="date-end"
               value={dateEnd}
               onChange={(e) => setDateEnd(e.target.value)}
               />

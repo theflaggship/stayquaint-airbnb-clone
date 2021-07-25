@@ -36,8 +36,10 @@ const LodgingPage = () => {
   return (
     <div className="lodging-page">
       <div className="lodging-page-header">
-        <h1 className="ind-lodging-name">{lodging?.name}</h1>
-        <h4>{lodging?.Address.city}, {lodging?.Address.state}, {lodging?.Address.country}</h4>
+        <div className="loding-name-address">
+          <h1 className="ind-lodging-name">{lodging?.name}</h1>
+          <h4>{lodging?.Address.city}, {lodging?.Address.state}, {lodging?.Address.country}</h4>
+        </div>
         <CreateBooking />
       </div>
       <div className="image-container">
