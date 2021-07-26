@@ -25,17 +25,20 @@ const CreateReview = () => {
   const handleSubmit = (e) => {
       e.preventDefault();
 
-      const payload = {
-          rating: parseInt(rating),
-          comment,
-          lodgingId: parseInt(lodgingId),
-          userId: user.id
+      if (user) {
+
+          const payload = {
+            rating: parseInt(rating),
+            comment,
+            lodgingId: parseInt(lodgingId),
+            userId: user.id
+        }
+        dispatch(createReview(payload))
+        .then(() => {
+            setComment('');
+            setRating(0);
+        })
       }
-      dispatch(createReview(payload))
-      .then(() => {
-          setComment('');
-          setRating(0);
-      })
     }
 
   return (
