@@ -121,7 +121,7 @@ h2 {
     margin-top: 10px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-start;
     flex-wrap: wrap;
     padding-top: 0;
     margin-left: 100px;
