@@ -8,7 +8,6 @@ const MyBookingsPage = () => {
     const dispatch = useDispatch();
     const { userId } = useParams();
     const bookings = useSelector(state => state.bookings);
-    const lodgings = Object.values(useSelector(state => state.lodgings))
     const history = useHistory();
 
     useEffect(() => {
@@ -23,8 +22,8 @@ const MyBookingsPage = () => {
         <div className="my-bookings-page">
                 <h2 className="my-bookings">My Bookings</h2>
                 <div className="my-bookings-container">
-                {bookings && bookings?.map(booking => (
-                    <div className="ind-booking-container">
+                {bookings?.map(booking => (
+                    <div key={`booking-${booking.id}`} className="ind-booking-container">
                       <p className="booking-lodging-name">{booking?.Lodging?.name}</p>
                       <p className="booking-lodging-datestart">{booking?.dateStart?.slice(5)} - {booking?.dateEnd?.slice(5)}</p>
                       <button className="booking-delete-button" onClick={() => handleDelete(booking?.id)}>Delete</button>

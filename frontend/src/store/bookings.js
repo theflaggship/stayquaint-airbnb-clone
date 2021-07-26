@@ -33,7 +33,6 @@ export const createBooking = (payload) => async dispatch => {
         const booking = await response.json();
         dispatch(addOneBooking(booking));
         history.push(`/bookings`);
-        return booking
     }
 }
 
@@ -58,7 +57,7 @@ const bookingsReducer = (state = [], action) => {
     let newState
     switch (action.type) {
         case LOAD:
-            return [...state, ...action.bookings];
+            return [...action.bookings];
         case ADD_ONE:
             return [...state, action.booking];
         case DELETE_ONE:

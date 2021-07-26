@@ -37,7 +37,7 @@ router.post('/', asyncHandler(async (req, res) => {
         dateStart,
         dateEnd
     })
-    res.json({booking})
+    res.json(booking)
 }));
 
 // PUT /api/bookings/:id

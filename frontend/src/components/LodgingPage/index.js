@@ -13,11 +13,11 @@ const LodgingPage = () => {
   const { lodgingId } = useParams()
   const lodging = useSelector(state => state.lodgings[lodgingId]);
   const reviews = useSelector(state => state.reviews);
-  console.log("========",reviews)
   const reviewsCopy = []
   reviews?.forEach(review => reviewsCopy.push(review))
 
-  const orderedReviews = reviewsCopy?.sort((a, b) => (a.createdAt < b.createdAt) ? 1 : -1)
+  reviewsCopy?.sort((a, b) => (a.createdAt < b.createdAt) ? 1 : -1)
+  console.log(reviews, reviewsCopy, "+++++++++++++++")
 
   useEffect(() => {
       dispatch(getLodging(lodgingId))
@@ -71,8 +71,8 @@ const LodgingPage = () => {
       <div className="review-section">
         <h2 className="reviews-title">Reviews</h2>
         <div className="reviews-container">
-          {orderedReviews.map(review => (
-          <Review review= {review}/>
+          {reviewsCopy.map(review => (
+          <Review key={review.id} review= {review}/>
           ))}
         </div>
       </div>

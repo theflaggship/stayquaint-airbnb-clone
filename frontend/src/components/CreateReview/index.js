@@ -27,11 +27,11 @@ const CreateReview = () => {
 
       if (user) {
 
-          const payload = {
-            rating: parseInt(rating),
-            comment,
-            lodgingId: parseInt(lodgingId),
-            userId: user.id
+        const payload = {
+          rating: parseInt(rating),
+          comment,
+          lodgingId: parseInt(lodgingId),
+          userId: user.id
         }
         dispatch(createReview(payload))
         .then(() => {

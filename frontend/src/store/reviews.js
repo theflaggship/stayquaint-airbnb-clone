@@ -35,7 +35,6 @@ export const createReview = (payload) => async dispatch => {
         const review = await response.json();
         console.log(review)
         dispatch(addOneReview(review));
-        return review
     }
 }
 
