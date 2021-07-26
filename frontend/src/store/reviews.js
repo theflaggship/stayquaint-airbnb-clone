@@ -16,8 +16,13 @@ const addOneReview = review => ({
     review,
 });
 
-const deleteOneReview = review => ({
+const deleteOneReview = reviewId => ({
     type: DELETE_ONE,
+    reviewId,
+});
+
+const editOneReview = review => ({
+    type: EDIT_ONE,
     review,
 });
 
@@ -28,6 +33,7 @@ export const createReview = (payload) => async dispatch => {
     });
     if (response.ok) {
         const review = await response.json();
+        console.log(review)
         dispatch(addOneReview(review));
         return review
     }
@@ -46,17 +52,40 @@ export const deleteReview = (reviewId) => async dispatch => {
         method: 'DELETE',
     });
     if (response.ok) {
+        dispatch(deleteOneReview(reviewId));
+    }
+};
+
+export const editReview = (reviewId, payload) => async dispatch => {
+    const response = await csrfFetch(`/api/reviews/${reviewId}`, {
+        method: 'PUT',
+        body: JSON.stringify(payload),
+    });
+    if (response.ok) {
         const review = await response.json();
-        dispatch(deleteOneReview(review.id));
+        dispatch(editOneReview(review));
+        return review
     }
 };
 
 const reviewsReducer = (state = [], action) => {
+    let newState;
     switch (action.type) {
         case LOAD:
             return [...state, ...action.reviews]
         case ADD_ONE:
             return [...state, action.review];
+        case DELETE_ONE:
+            newState = [...state]
+            const newReviews = newState.filter(review => {
+               return review.id !== action.reviewId
+            })
+            return newReviews
+        case EDIT_ONE:
+            newState = [...state]
+            const reviewToEdit = newState.findIndex(review => review.id === action.review.id)
+            return [...newState.slice(0, reviewToEdit), action.review, ...newState.slice(reviewToEdit + 1)]
+
         default:
             return state;
     }

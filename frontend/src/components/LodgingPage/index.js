@@ -13,6 +13,7 @@ const LodgingPage = () => {
   const { lodgingId } = useParams()
   const lodging = useSelector(state => state.lodgings[lodgingId]);
   const reviews = useSelector(state => state.reviews);
+  console.log("========",reviews)
   const reviewsCopy = []
   reviews?.forEach(review => reviewsCopy.push(review))
 
@@ -67,11 +68,13 @@ const LodgingPage = () => {
           <CreateReview />
         </div>
       </div>
-      <div className="reviews-container">
+      <div className="review-section">
         <h2 className="reviews-title">Reviews</h2>
-        {orderedReviews.map(review => (
-        <Review review= {review}/>
-        ))}
+        <div className="reviews-container">
+          {orderedReviews.map(review => (
+          <Review review= {review}/>
+          ))}
+        </div>
       </div>
     </div>
   )

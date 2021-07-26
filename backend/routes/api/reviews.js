@@ -25,7 +25,13 @@ router.post('/', asyncHandler(async (req, res) => {
         rating,
         comment
     })
-    res.json(review)
+
+    const returnReview = await Review.findOne({
+        where: { id: review.id },
+        include: [User]
+    })
+
+    res.json(returnReview)
 }));
 
 // Get lodging reviews
@@ -42,6 +48,30 @@ router.get('/lodgings/:lodgingId', asyncHandler(async (req, res) => {
 
 
 // Edit a review
+
+
+router.put('/:reviewId', asyncHandler(async (req, res) => {
+    const { reviewId } = req.params
+    const review = await Review.findByPk(reviewId)
+
+    const {
+        // rating,
+        comment,
+    } = req.body
+
+    console.log(req.body)
+
+    // review.rating = rating
+    review.comment = comment
+    await review.save()
+
+    const returnReview = await Review.findByPk(reviewId, {
+        include: [User]
+    })
+    
+    res.json(returnReview)
+}));
+
 
 // Delete a review
 

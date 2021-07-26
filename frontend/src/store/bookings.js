@@ -50,22 +50,21 @@ export const deleteBooking = (bookingId) => async dispatch => {
         method: 'DELETE',
     });
     if (response.ok) {
-        const booking = await response.json();
-        dispatch(deleteOneBooking(booking));
+        dispatch(deleteOneBooking(bookingId));
     }
 }
 
 const bookingsReducer = (state = [], action) => {
+    let newState
     switch (action.type) {
         case LOAD:
             return [...state, ...action.bookings];
         case ADD_ONE:
             return [...state, action.booking];
         case DELETE_ONE:
-            const newState = {...state}
-            const newBookings = newState.bookings?.filter(booking => booking.id !== action.booking.id)
-            newState.bookings = newBookings;
-            return newState;
+            newState = [...state]
+            const newBookings = newState.filter(booking => booking.id !== action.bookingId)
+            return newBookings;
         default:
             return state;
     }

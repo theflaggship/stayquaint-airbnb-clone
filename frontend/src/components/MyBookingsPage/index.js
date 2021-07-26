@@ -17,8 +17,7 @@ const MyBookingsPage = () => {
 
     const handleDelete = (bookingId) => {
         return dispatch(deleteBooking(bookingId))
-        .then(() => history.push('/'))
-      }
+    }
 
     return (
         <div className="my-bookings-page">

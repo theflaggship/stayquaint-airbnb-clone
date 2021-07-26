@@ -1,3 +1,47 @@
 .review-container {
-    border: 1px solid #b5b5b5;
+    width: 25%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #e5e5e5;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.review-comment,
+.review-rating,
+.review-username,
+.review-create-date {
+    padding: 5px;
+}
+
+.review-delete-button {
+    background-color: transparent;
+    color: gray;
+    border: none;
+    text-decoration: underline;
+    padding: 0px;
+    cursor: pointer;
+}
+
+.review-username {
+    font-weight: bold;
+}
+.review-create-date {
+    font-size: 0.8em;
+    color: rgb(160, 160, 160);
+    margin-top: 3px;
+}
+
+.review-rating {
+    padding-bottom: 5px;
+}
+
+.username-date-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.review-comment {
+    color: black;
+    line-height: 20px;
 }

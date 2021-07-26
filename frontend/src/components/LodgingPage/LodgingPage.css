@@ -95,6 +95,7 @@ h2 {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    padding-bottom: 30px;
 }
 
 .page-create-review-container {
@@ -117,6 +118,16 @@ h2 {
 }
 
 .reviews-container {
-    border-top: 1px solid #e5e5e5;
-    margin-top: 100px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 25px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.review-section {
+    border: 1px solid #e5e5e5;
 }
