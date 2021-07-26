@@ -45,3 +45,21 @@
     color: black;
     line-height: 20px;
 }
+
+.review-edit-button {
+    background-color: transparent;
+    color: gray;
+    border: none;
+    text-decoration: underline;
+    padding: 0px;
+    cursor: pointer;
+}
+
+.save-edit-button {
+    background-color: transparent;
+    color: gray;
+    border: none;
+    text-decoration: underline;
+    padding: 0px;
+    cursor: pointer;
+}

@@ -8,8 +8,8 @@
   display: flex;
   flex-direction: column;
   background-color: #FFFFFF;
-  padding: 25px;
   z-index: 30000;
+  padding: 25px;
 }
 
 .email-div,
@@ -40,8 +40,8 @@
   font-family: 'Mukta', sans-serif;
   font-weight: lighter;
   font-size: 1.5em;
-  margin-left: 60px;
-  margin-top: 0px;
+  margin-left: 90px;
+  margin-top: 10px;
 
 }
 
@@ -50,7 +50,7 @@
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding: 50px;
+  padding: 20px;
 }
 
 button {
@@ -62,4 +62,10 @@ button {
   border-radius: 10px;
   padding: 5px 10px 5px 10px;
   margin-top: 20px;
+}
+
+.modal-submit-button {
+  width: 80%;
+  padding: 10px 20px 10px 20px;
+  margin-left: 40px;
 }

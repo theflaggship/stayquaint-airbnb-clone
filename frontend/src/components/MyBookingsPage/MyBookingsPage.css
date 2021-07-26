@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap');
+
+
+.my-bookings-page {
+    margin-top: 100px;
+}
+
+.my-bookings {
+    margin-left: 50px;
+}
+
+.my-bookings-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-left: 50px;
+}
+
+.ind-booking-container {
+    width: 300px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #e5e5e5;
+    padding: 15px;
+    border-radius: 10px;
+    margin-right: 15px;
+}
+
+.booking-lodging-name,
+.booking-lodging-datestart,
+.booking-lodging-dateend {
+    padding: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.booking-lodging-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-left: 70px;
+    margin-bottom: 10px;
+}
+
+.booking-lodging-datestart,
+.booking-lodging-dateend {
+    margin-left: 100px;
+    padding: 5px;
+}
+
+.booking-lodging-dateend {
+    margin-left: 103px;
+}
+
+.cancel-booking-button {
+    width: 150px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    margin-left: 70px;
+}
+

@@ -6,7 +6,7 @@ h2 {
   font-family: 'Mukta', sans-serif;
   font-weight: lighter;
   font-size: 1.5em;
-  margin-left: 100px;
+  margin-left: 50px;
 
 }
 
@@ -17,7 +17,6 @@ h2 {
   background-color: #FFFFFF;
   padding: 25px;
   border: 1px solid rgb(167, 167, 167);
-  padding-top: 100px;
   z-index: 30000;
 }
 
@@ -52,6 +51,7 @@ h2 {
 
 .cred-input {
   width: 350px;
+  margin-left: 5px;
 }
 
 .password-input {
@@ -61,4 +61,8 @@ h2 {
 
 .password-div {
   margin-right: 10px;
+}
+
+.welcome-title {
+  margin-right: auto;
 }

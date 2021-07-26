@@ -25,8 +25,9 @@ const MyBookingsPage = () => {
                 {bookings?.map(booking => (
                     <div key={`booking-${booking.id}`} className="ind-booking-container">
                       <p className="booking-lodging-name">{booking?.Lodging?.name}</p>
-                      <p className="booking-lodging-datestart">{booking?.dateStart?.slice(5)} - {booking?.dateEnd?.slice(5)}</p>
-                      <button className="booking-delete-button" onClick={() => handleDelete(booking?.id)}>Delete</button>
+                      <p className="booking-lodging-datestart">Start: {booking?.dateStart?.slice(5)}</p>
+                      <p className="booking-lodging-dateend">End: {booking?.dateEnd?.slice(5)}</p>
+                      <button className="cancel-booking-button" onClick={() => handleDelete(booking?.id)}>Cancel Booking</button>
                     </div>
                 ))}
                 </div>

@@ -111,7 +111,7 @@ h2 {
 
 .create-review-header {
     font-family: 'Roboto', sans-serif;
-    font-size: 1.0em;
+    font-size: 1.2em;
     margin-left: auto;
     margin-right: auto;
     padding-bottom: 30px;
@@ -121,13 +121,17 @@ h2 {
     margin-top: 10px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
-    padding-top: 25px;
+    padding-top: 0;
     margin-left: 100px;
     margin-right: 100px;
 }
 
 .review-section {
     border: 1px solid #e5e5e5;
+}
+
+.reviews-title {
+    margin-left: 50px;
 }

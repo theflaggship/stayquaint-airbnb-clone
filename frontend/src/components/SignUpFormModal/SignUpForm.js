@@ -75,7 +75,7 @@ function SignUpFormModal() {
             required
           />
         </div>
-        <button className="submit-button" type="submit-button">Sign Up</button>
+        <button className="modal-submit-button" type="submit-button">Sign Up</button>
       </form>
     </div>
   );

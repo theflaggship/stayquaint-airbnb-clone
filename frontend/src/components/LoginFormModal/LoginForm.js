@@ -30,7 +30,7 @@ function LoginForm() {
         </ul>
         <div className="cred-div">
           <div className="welcome-title">
-            <h2>Welcome to stayQuaint</h2>
+            <h2 className="welcome-title">Welcome to stayQuaint</h2>
           </div>
           <div className="cred-input-container">
             <input
