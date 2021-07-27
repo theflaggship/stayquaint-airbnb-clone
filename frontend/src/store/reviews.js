@@ -71,7 +71,7 @@ const reviewsReducer = (state = [], action) => {
     let newState;
     switch (action.type) {
         case LOAD:
-            return [...state, ...action.reviews]
+            return [...action.reviews]
         case ADD_ONE:
             return [...state, action.review];
         case DELETE_ONE:
