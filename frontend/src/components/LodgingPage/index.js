@@ -17,7 +17,6 @@ const LodgingPage = () => {
   reviews?.forEach(review => reviewsCopy.push(review))
 
   reviewsCopy?.sort((a, b) => (a.createdAt < b.createdAt) ? 1 : -1)
-  console.log(reviews, reviewsCopy, "+++++++++++++++")
 
   useEffect(() => {
       dispatch(getLodging(lodgingId))
@@ -71,9 +70,11 @@ const LodgingPage = () => {
       <div className="review-section">
         <h2 className="reviews-title">Reviews</h2>
         <div className="reviews-container">
-          {reviewsCopy.map(review => (
-          <Review key={review.id} review= {review}/>
-          ))}
+          {reviewsCopy.map(review => {
+            if (review.lodgingId === lodging.id) {
+              return <Review key={review.id} review= {review}/>
+          }
+          })}
         </div>
       </div>
     </div>
