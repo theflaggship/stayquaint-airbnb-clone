@@ -1,8 +1,13 @@
+<br />
+<br /> 
+
 <p align='center'>
-  <img src='https://i.imgur.com/LOv8ujp.png' width='400px' >
+  <img src='https://i.imgur.com/LOv8ujp.png' width='500px' >
 </p>
 
-# StayQuaint
+<br />
+<br />
+
 StayQuaint, an <a href='https://airbnb.com'>Airbnb</a> clone, is a web app where vacationers can easily find, book and review quaint, low-scale inns, cabins and bed and breakfast lodgings.  Owners can easily list their accommodation(s) as well.
 
 View live: <a href='https://stayquaint.herokuapp.com/'>StayQuaint</a>
