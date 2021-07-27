@@ -1,5 +1,8 @@
+<br />
+<br /> 
+
 <p align='center'>
-  <img src='https://i.imgur.com/LOv8ujp.png' width='400px' >
+  <img src='https://i.imgur.com/LOv8ujp.png' width='500px' >
 </p>
 
 <br />
