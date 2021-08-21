@@ -51,7 +51,7 @@ View live: <a href='https://stayquaint.herokuapp.com/'>StayQuaint</a>
 
 ## Installation
 
-1. After cloning the project, from the hullabaloo (root) folder, run in the terminal:
+1. After cloning the project, from the stayQuaint (root) folder, run in the terminal:
 ```
  npm install
 ```
